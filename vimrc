@@ -7,7 +7,9 @@
     call vundle#begin()
 
     " let Vundle manage Vundle, required
-    "Plugin 'gmarik/vundle'
+    Plugin 'gmarik/vundle'
+    
+    Plugin 'goirijo/vim-jgg-colorscheme'
     Plugin 'ctags.vim'
     Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
     "Plugin 'vimlatex'
@@ -18,8 +20,6 @@
     "Plugin 'easytags.vim'
     Plugin 'Valloric/YouCompleteMe'
     Plugin 'TagHighlight'
-    "Plugin 'yearofmoo/Vim-Darkmate'
-    "Plugin 'bandit.vim'
     Plugin 'flazz/vim-colorschemes'
     "Plugin 'blueyed/vim-diminactive'
     Plugin 'gerw/vim-HiLinkTrace'
