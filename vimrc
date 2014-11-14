@@ -8,7 +8,7 @@
 
     " let Vundle manage Vundle, required
     Plugin 'gmarik/vundle'
-    
+
     Plugin 'goirijo/vim-jgg-colorscheme'
     Plugin 'ctags.vim'
     Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
@@ -19,12 +19,14 @@
     Plugin 'vim-misc'
     "Plugin 'easytags.vim'
     Plugin 'Valloric/YouCompleteMe'
-    Plugin 'TagHighlight'
     Plugin 'flazz/vim-colorschemes'
     "Plugin 'blueyed/vim-diminactive'
     Plugin 'gerw/vim-HiLinkTrace'
     Plugin 'nacitar/terminalkeys.vim'
     Plugin 'Command-T'
+    Plugin 'bling/vim-airline'
+    Plugin 'fugitive.vim'
+    Plugin 'magic-dot-files/TagHighlight'
 
     " All of your Plugins must be added before the following line
     call vundle#end()            " required
@@ -41,6 +43,20 @@
     " see :h vundle for more details or wiki for FAQ
     " Put your non-Plugin stuff after this line
 
+" }
+
+" taghighlight {
+"  let g:CtagsExtraArguments=['--fields=+l']
+" }
+
+" airline {
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#tabline#enabled = 1
+  set laststatus=2
+  let g:airline_theme='wombat'
+  "let g:airline_left_sep=''
+  "let g:airline_right_sep=''
+  "set noshowmode
 " }
 
 " youcompleteme stuff {
@@ -93,7 +109,7 @@
         au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
     endif
     colorscheme jgg
-    set backspace=indent,eol,start  " backspace for dummys                                                                                      
+    set backspace=indent,eol,start  " backspace for dummys
     set linespace=0                 " No extra spaces between rows
     set nu                          " Line numbers on
     set showmatch                   " show matching brackets/parenthesis
@@ -102,7 +118,7 @@
     set winminheight=0              " windows can be 0 line high.
     set ignorecase                  " case insensitive search
     set smartcase                   " case sensitive when uc present
-    set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\%l
+    "set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\%l
     set laststatus=2
 "}
 
@@ -160,7 +176,7 @@ endif
     set tabstop=4 					" an indentation every four columns
     set softtabstop=4 				" let backspace delete indent
     filetype plugin indent on
-    "set matchpairs+=<:>            	" match, to be used with % 
+    "set matchpairs+=<:>            	" match, to be used with %
 "}
 
 " Use local vimrc if available {
