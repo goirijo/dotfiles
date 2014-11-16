@@ -10,24 +10,25 @@
     Plugin 'gmarik/vundle'
 
     Plugin 'goirijo/vim-jgg-colorscheme'
-    Plugin 'ctags.vim'
     Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
-    "Plugin 'vimlatex'
     Plugin 'TeX-PDF'
-    "Plugin 'taglist.vim'
-    "Plugin 'GetLatestVimScripts'
-    Plugin 'vim-misc'
-    "Plugin 'easytags.vim'
     Plugin 'Valloric/YouCompleteMe'
-    Plugin 'flazz/vim-colorschemes'
-    "Plugin 'blueyed/vim-diminactive'
     Plugin 'gerw/vim-HiLinkTrace'
-    Plugin 'nacitar/terminalkeys.vim'
     Plugin 'Command-T'
     Plugin 'bling/vim-airline'
     Plugin 'fugitive.vim'
     Plugin 'magic-dot-files/TagHighlight'
+    Plugin 'Tagbar'
 
+    "Plugin 'ctags.vim'
+    "Plugin 'vimlatex'
+    "Plugin 'taglist.vim'
+    "Plugin 'GetLatestVimScripts'
+    "Plugin 'vim-misc'
+    "Plugin 'easytags.vim'
+    "Plugin 'blueyed/vim-diminactive'
+    "Plugin 'nacitar/terminalkeys.vim'
+    
     " All of your Plugins must be added before the following line
     call vundle#end()            " required
     filetype plugin indent on    " required
