@@ -20,6 +20,8 @@
     Plugin 'magic-dot-files/TagHighlight'
     Plugin 'Tagbar'
 
+    "Plugin 'Ultisnips'
+    "Plugin 'honza/vim-snippets'
     "Plugin 'ctags.vim'
     "Plugin 'vimlatex'
     "Plugin 'taglist.vim'
@@ -50,6 +52,9 @@
 "  let g:CtagsExtraArguments=['--fields=+l']
 " }
 
+" ultisnips {
+  let g:UltiSnipsSnippetDirectories=["UltiSnips", "ultisnips_my"]
+" }
 " airline {
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
@@ -61,9 +66,10 @@
 " }
 
 " youcompleteme stuff {
-    set sessionoptions=blank,buffers,curdir,folds,help,tabpages,winsize
+    "set sessionoptions=blank,buffers,curdir,folds,help,tabpages,winsize
     let g:ycm_collect_identifiers_from_tags_files = 1
     let g:ycm_register_as_syntastic_checker = 1
+    let g:ycm_autoclose_preview_window_after_insertion = 1
 " }
 
 " easytags {
@@ -177,7 +183,7 @@ endif
     set expandtab 	  	     		" tabs are spaces, not tabs
     set tabstop=4 					" an indentation every four columns
     set softtabstop=4 				" let backspace delete indent
-    filetype plugin indent on
+    "filetype plugin indent on
     "set matchpairs+=<:>            	" match, to be used with %
 "}
 
