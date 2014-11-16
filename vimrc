@@ -120,6 +120,7 @@
     set smartcase                   " case sensitive when uc present
     "set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\%l
     set laststatus=2
+    set hidden
 "}
 
 " Rename tabs to show tab number.
@@ -179,12 +180,12 @@ endif
     "set matchpairs+=<:>            	" match, to be used with %
 "}
 
+" Needs moar macros {
+    source /usr/share/vim/vim74/ftplugin/man.vim
+"}
+
 " Use local vimrc if available {
     if filereadable(expand("~/.vimrc.local"))
         source ~/.vimrc.local
     endif
 " }
-
-" Needs moar macros {
-    source /usr/share/vim/vim74/ftplugin/man.vim
-"}
