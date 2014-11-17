@@ -19,6 +19,7 @@
     Plugin 'fugitive.vim'
     Plugin 'magic-dot-files/TagHighlight'
     Plugin 'Tagbar'
+    Plugin 'EasyMotion'
 
     "Plugin 'Ultisnips'
     "Plugin 'honza/vim-snippets'
