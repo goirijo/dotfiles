@@ -7,7 +7,7 @@
     call vundle#begin()
 
     " let Vundle manage Vundle, required
-    Plugin 'gmarik/vundle'
+    Plugin 'gmarik/Vundle.vim'
 
     Plugin 'goirijo/vim-jgg-colorscheme'
     Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
@@ -20,8 +20,9 @@
     Plugin 'magic-dot-files/TagHighlight'
     Plugin 'Tagbar'
     Plugin 'EasyMotion'
+    Plugin 'freitass/todo.txt-vim'
 
-    Plugin 'Ultisnips'
+    Plugin 'SirVer/ultisnips'
     Plugin 'honza/vim-snippets'
     
     "Plugin 'ctags.vim'
@@ -55,7 +56,8 @@
 " }
 
 " ultisnips {
-  "let g:UltiSnipsSnippetDirectories=["UltiSnips", "ultisnips_my"]
+  let g:UltiSnipsSnippetsDir="~/.dotfiles/UltiSnips"
+  let g:UltiSnipsSnippetDirectories=["~/.dotfiles/Ultisnips"]
   let g:UltiSnipsExpandTrigger="<c-j>"
   "let g:UltiSnipsJumpForwardTrigger="<c-b>"
   "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
@@ -123,7 +125,8 @@
     colorscheme jgg
     set backspace=indent,eol,start  " backspace for dummys
     set linespace=0                 " No extra spaces between rows
-    set nu                          " Line numbers on
+    set number
+    set relativenumber              " Line numbers on. but relative
     set showmatch                   " show matching brackets/parenthesis
     set incsearch                   " find as you type search
     set hlsearch                    " highlight search terms
