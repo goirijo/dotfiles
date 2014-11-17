@@ -21,8 +21,9 @@
     Plugin 'Tagbar'
     Plugin 'EasyMotion'
 
-    "Plugin 'Ultisnips'
-    "Plugin 'honza/vim-snippets'
+    Plugin 'Ultisnips'
+    Plugin 'honza/vim-snippets'
+    
     "Plugin 'ctags.vim'
     "Plugin 'vimlatex'
     "Plugin 'taglist.vim'
@@ -54,7 +55,10 @@
 " }
 
 " ultisnips {
-  let g:UltiSnipsSnippetDirectories=["UltiSnips", "ultisnips_my"]
+  "let g:UltiSnipsSnippetDirectories=["UltiSnips", "ultisnips_my"]
+  let g:UltiSnipsExpandTrigger="<c-j>"
+  "let g:UltiSnipsJumpForwardTrigger="<c-b>"
+  "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " }
 " airline {
   let g:airline_powerline_fonts = 1
