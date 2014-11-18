@@ -57,8 +57,8 @@
 
 " ultisnips {
   let g:UltiSnipsSnippetsDir="~/.dotfiles/UltiSnips"
-  let g:UltiSnipsSnippetDirectories=["~/.dotfiles/Ultisnips"]
-  let g:UltiSnipsExpandTrigger="<c-j>"
+  let g:UltiSnipsSnippetDirectories=["~/.dotfiles/UltiSnips", "UltiSnips"]
+  let g:UltiSnipsExpandTrigger="<f5>"
   "let g:UltiSnipsJumpForwardTrigger="<c-b>"
   "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " }
