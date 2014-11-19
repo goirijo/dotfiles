@@ -52,7 +52,27 @@
 " }
 
 " taghighlight {
-"  let g:CtagsExtraArguments=['--fields=+l']
+  let g:CtagsExtraArguments=['--fields=+l', '--list-kinds=c++']
+" }
+
+" tagbar {
+let g:tagbar_type_cpp = {
+            \ 'kinds' : [
+            \ 'd:macros:1',
+            \ 'g:enums',
+            \ 't:typedefs:0:0',
+            \ 'e:enumerators:0:0',
+            \ 'n:namespaces',
+            \ 'c:classes',
+            \ 's:structs',
+            \ 'u:unions',
+            \ 'f:functions',
+            \ 'm:members:0:0',
+            \ 'v:global:0:0',
+            \ 'x:external:0:0',
+            \ 'l:local:0:0'
+            \ ]
+            \ }  
 " }
 
 " ultisnips {
