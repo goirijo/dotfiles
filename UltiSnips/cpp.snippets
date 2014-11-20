@@ -1,0 +1,51 @@
+snippet define "Member declaration to definition" b
+`!p snip.rv=re.match("^ *",snip.v.text).group(0)`/**
+`!p snip.rv=re.match("^ *",snip.v.text).group(0)` * ${3:I would never forget to make a Doxygen explanation for a new routine.}
+`!p snip.rv=re.match("^ *",snip.v.text).group(0)` */
+
+`!p
+snip.rv=re.match("^ *\w*",snip.v.text).group(0)` ${1:Parent Class}::`!p
+functionparameters=re.sub("^ *\w* (.*);",r"\1",snip.v.text).rstrip()
+returntype=re.match("^ *\w*",snip.v.text).group(0)
+snip.rv=functionparameters
+snip.shift()
+snip+="{"
+snip+=returntype
+snip.shift()` ${2:returnval};
+`!p
+prespace=re.match("^ *",snip.v.text).group(0)
+snip.shift()
+snip+=prespace`$0
+`!p
+prespace=re.match("^ *",snip.v.text).group(0)
+snip.shift()
+snip+=prespace+"return "+t[2]+";"
+snip.reset_indent()
+snip+=prespace+"}"`
+endsnippet
+
+snippet define "Void member declaration to definition" b
+`!p snip.rv=re.match("^ *",snip.v.text).group(0)`/**
+`!p snip.rv=re.match("^ *",snip.v.text).group(0)` * ${3:I would never forget to make a Doxygen explanation for a new routine.}
+`!p snip.rv=re.match("^ *",snip.v.text).group(0)` */
+
+`!p
+snip.rv=re.match("^ *\w*",snip.v.text).group(0)` ${1:Parent Class}::`!p
+functionparameters=re.sub("^ *\w* (.*);",r"\1",snip.v.text).rstrip()
+returntype=re.match("^ *\w*",snip.v.text).group(0)
+snip.rv=functionparameters
+snip.shift()
+snip+="{"
+snip.shift()`
+`!p
+prespace=re.match("^ *",snip.v.text).group(0)
+snip.shift()
+snip+=prespace`$0
+`!p
+prespace=re.match("^ *",snip.v.text).group(0)
+snip.shift()
+snip+=prespace+"return;"
+snip.reset_indent()
+snip+=prespace+"}"`
+
+endsnippet

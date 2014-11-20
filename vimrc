@@ -56,8 +56,9 @@
 " }
 
 " ultisnips {
+  set runtimepath+=~/.dotfiles/
   let g:UltiSnipsSnippetsDir="~/.dotfiles/UltiSnips"
-  let g:UltiSnipsSnippetDirectories=["~/.dotfiles/UltiSnips", "UltiSnips"]
+"  let g:UltiSnipsSnippetDirectories=["~/.dotfiles/UltiSnips"]
   let g:UltiSnipsExpandTrigger="<f5>"
   "let g:UltiSnipsJumpForwardTrigger="<c-b>"
   "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
