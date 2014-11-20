@@ -1,0 +1,6 @@
+--pager=less -FRSXi
+--ignore-file=ext:s
+--ignore-file=ext:ii
+--ignore-file=ext:taghl
+--ignore-file=is:tags
+--color-match=red
