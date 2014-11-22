@@ -4,7 +4,7 @@ snippet define "Member declaration to definition" b
 `!p snip.rv=re.match("^ *",snip.v.text).group(0)` */
 
 `!p
-snip.rv=re.match("^ *\w*",snip.v.text).group(0)` ${1:Parent Class}::`!p
+snip.rv=re.match("^ *\w*",snip.v.text).group(0)` ${1:ParentClass}::`!p
 functionparameters=re.sub("^ *\w* (.*);",r"\1",snip.v.text).rstrip()
 returntype=re.match("^ *\w*",snip.v.text).group(0)
 snip.rv=functionparameters
@@ -47,5 +47,4 @@ snip.shift()
 snip+=prespace+"return;"
 snip.reset_indent()
 snip+=prespace+"}"`
-
 endsnippet
