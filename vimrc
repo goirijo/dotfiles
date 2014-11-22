@@ -21,6 +21,7 @@
     Plugin 'Tagbar'
     Plugin 'EasyMotion'
     Plugin 'freitass/todo.txt-vim'
+    Plugin 'tpope/vim-abolish'
 
     Plugin 'SirVer/ultisnips'
     Plugin 'honza/vim-snippets'
