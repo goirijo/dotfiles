@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ $# -eq 0 ]]; then
+    vim ~/owncloud/todo.txt_cli-2.10/todo.txt
+else
+cd ~/owncloud/todo.txt_cli-2.10
+./todo.sh $@
+fi

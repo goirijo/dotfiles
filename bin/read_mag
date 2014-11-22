@@ -1,0 +1,4 @@
+#!/bin/bash
+
+FILE=${1:-OSZICAR}
+cat $FILE | grep "E0=" | tail -1| awk '{print $10}'

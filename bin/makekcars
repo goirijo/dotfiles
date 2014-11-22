@@ -1,0 +1,37 @@
+#!/bin/bash
+
+if [[ -z "$1" ]]; then
+    echo "Specify max k value or \"collect\""
+    exit 1
+fi
+
+if [[ ! -f KPOINTS && ! -f POSCAR && ! -f POTCAR && ! -f INCAR ]]; then
+    echo "Missing INCARS"
+    exit 2
+fi
+
+MODE=$(head -3 KPOINTS | tail -1 | head -c 1)
+
+if [[ "$1" -eq collect ]]; then
+    if [[ -f energy ]]; then
+        echo "energy.txt already exists"
+        exit 2
+    fi
+
+    for K in ${MODE}_*; do
+        [[ -d "$K" ]] || continue
+        echo "Extracting from $K..."
+        echo -n "${K/$MODE_*./}    " >> energy.txt
+        read_energy $K/OSZICAR >> energy.txt
+    done
+    exit 0
+fi
+
+echo "Found grid mode to be of type $MODE"
+
+for i in `seq 1 $1`; do
+    echo "Working on $i...."
+    mkdir ${MODE}_$i.$i.$i
+    cp INCAR POSCAR POTCAR *.pbs ${MODE}_$i.$i.$i
+    sed "s/REPLACE/$i $i $i/" < KPOINTS > ${MODE}_$i.$i.$i/KPOINTS
+done

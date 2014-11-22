@@ -1,0 +1,74 @@
+#!/usr/bin/python3
+
+import getopt, sys, shutil
+
+def convert_POSCAR(filename):
+    #print(filename)
+    
+    # Make a copy of the original file
+    shutil.copyfile(filename, filename+"_pre4mat")
+    print("Copying original file to", filename+"_pre4mat")
+    
+    with open(filename) as f:
+        content = f.readlines()
+
+    atomcount = 0;
+    typecount = 0;
+    
+    fwrite = open("output", 'w')
+    
+    for line, val in enumerate(content):
+
+        
+        if line < 5:
+            print(val.strip(), file=fwrite)
+        
+        # Element types
+        if line == 5:
+            #print(val.strip(), file=fwrite)
+            elements = val.split()
+            
+        # Number of each
+        if line == 6:
+            print(val.strip(), file=fwrite)
+            num_each = val.split()
+            
+        
+        if line == 7:
+            print(val.strip(), file=fwrite)
+            
+        if line > 7:
+            
+            print(val.strip(), elements[typecount], file=fwrite)
+            atomcount = atomcount+1
+
+            #print("atomcount " , atomcount, " typecount ", typecount, " num_each ", int(num_each[typecount]))
+            
+            if atomcount == int(num_each[typecount]):
+                typecount = typecount +1
+                atomcount = 0
+                
+                if typecount == len(num_each):
+                    break
+
+    fwrite.close()
+        
+
+    shutil.move("output", filename)
+
+ 
+def main(argv):
+    try:
+        opts, args = getopt.getopt(argv, "f")
+    except getopt.GetoptError:
+        print ('convert_POSCAR_format -f <filename>')
+        sys.exit(1)
+    for opt, arg in opts:
+        if opt in ('-f'):
+            convert_POSCAR(args[0])
+
+        #convert_POSCAR(
+        
+if __name__ == "__main__":
+    
+    main(sys.argv[1:])
