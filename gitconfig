@@ -1,2 +1,17 @@
 [user]
-	email = goirijo@umich.edu
+	name = John Goiri
+	email = jg.goiri@gmail.com
+[core]
+	editor = vim
+	trustctime = true
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[diff]
+	tool = vimdiff
+[rerere]
+	enabled = 1
+[push]
+	default = upstream
+[alias]
+	undo-commit = reset --soft HEAD^

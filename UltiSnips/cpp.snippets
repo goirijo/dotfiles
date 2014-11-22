@@ -1,4 +1,4 @@
-snippet define "Member declaration to definition" b
+snippet defreturn "Member declaration to definition" b
 `!p snip.rv=re.match("^ *",snip.v.text).group(0)`/**
 `!p snip.rv=re.match("^ *",snip.v.text).group(0)` * ${3:I would never forget to make a Doxygen explanation for a new routine.}
 `!p snip.rv=re.match("^ *",snip.v.text).group(0)` */
@@ -24,7 +24,7 @@ snip.reset_indent()
 snip+=prespace+"}"`
 endsnippet
 
-snippet define "Void member declaration to definition" b
+snippet defvoid "Void member declaration to definition" b
 `!p snip.rv=re.match("^ *",snip.v.text).group(0)`/**
 `!p snip.rv=re.match("^ *",snip.v.text).group(0)` * ${3:I would never forget to make a Doxygen explanation for a new routine.}
 `!p snip.rv=re.match("^ *",snip.v.text).group(0)` */
@@ -47,4 +47,26 @@ snip.shift()
 snip+=prespace+"return;"
 snip.reset_indent()
 snip+=prespace+"}"`
+endsnippet
+
+snippet defcons "Constructor member declaration to definition" b
+`!p
+parentclass=re.sub("^\s*(\w*)\(.*$",r"\1",snip.v.text).rstrip()
+functionparameters=re.sub("^ *\w* (.*);",r"\1",snip.v.text).rstrip()
+prespace=re.match("^ *",snip.v.text).group(0)
+snip.rv=parentclass+"::"+functionparameters
+snip+="{"
+snip.shift()
+snip.reset_indent()
+snip+=prespace`$0
+}
+endsnippet
+
+snippet guard "Make an include guard" b
+#ifndef ${1:MYFILE_??}
+#define $1
+
+$0
+
+#endif
 endsnippet
