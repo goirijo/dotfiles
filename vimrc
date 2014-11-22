@@ -99,6 +99,7 @@ let g:tagbar_type_cpp = {
     let g:ycm_collect_identifiers_from_tags_files = 1
     let g:ycm_register_as_syntastic_checker = 1
     let g:ycm_autoclose_preview_window_after_insertion = 1
+    let g:ycm_confirm_extra_conf = 0    "Just don't be dumb
 " }
 
 " easytags {
@@ -215,6 +216,10 @@ endif
     set softtabstop=4 				" let backspace delete indent
     "filetype plugin indent on
     "set matchpairs+=<:>            	" match, to be used with %
+    command Stylize execute "%! astyle"
+    nnoremap <leader>a :Stylize<CR>
+
+
 "}
 
 " Needs moar macros {
