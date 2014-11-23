@@ -28,3 +28,6 @@
 
 # indent body of namespace
 -N
+
+# add one line brackets
+-j
