@@ -3,8 +3,8 @@
 #Start work session
 	echo "Initializing work session..."
 	tmux new-session -d -s work >& /dev/null
-	tmux send -t work casmd ENTER
-	tmux send -t work clear ENTER
+    tmux send -t work casmd ENTER
+    tmux send -t work clear ENTER
 
 #Start double session
 	echo "Initializing double session..."

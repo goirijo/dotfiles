@@ -40,6 +40,7 @@ alias casmd='cd ~/programming/CASM'
 alias blind='xset dpms force off'
 alias ks='ls'
 alias copy='xclip -selection clipboard'
+alias attach='tmux -2 attach -t'
 
 #Make autojump start
 . /usr/share/autojump/autojump.sh
