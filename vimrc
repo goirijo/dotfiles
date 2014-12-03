@@ -148,7 +148,7 @@ let g:tagbar_type_cpp = {
     
     colorscheme jgg
     "I wish I knew how to do this in the plugin
-    match separator /\/\/\*\*\*\**\/\//
+    "match separator /\/\/\*\*\*\**\/\//
     
     set backspace=indent,eol,start  " backspace for dummies
     
