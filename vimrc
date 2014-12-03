@@ -145,8 +145,13 @@ let g:tagbar_type_cpp = {
     if has("autocmd")
         au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
     endif
+    
     colorscheme jgg
-    set backspace=indent,eol,start  " backspace for dummys
+    "I wish I knew how to do this in the plugin
+    match separator /\/\/\*\*\*\**\/\//
+    
+    set backspace=indent,eol,start  " backspace for dummies
+    
     set linespace=0                 " No extra spaces between rows
     set number
     set relativenumber              " Line numbers on. but relative
