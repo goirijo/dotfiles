@@ -22,6 +22,7 @@
     Plugin 'EasyMotion'
     Plugin 'freitass/todo.txt-vim'
     Plugin 'tpope/vim-abolish'
+    Plugin 'matchit.zip'
 
     Plugin 'SirVer/ultisnips'
     Plugin 'honza/vim-snippets'
