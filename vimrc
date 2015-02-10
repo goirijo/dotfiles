@@ -117,6 +117,7 @@ let g:tagbar_type_cpp = {
 
     " General {
     "folding stuff
+    colorscheme jgg
     set foldmethod=syntax
     set foldlevelstart=2
 
@@ -148,8 +149,6 @@ let g:tagbar_type_cpp = {
     endif
     
     colorscheme jgg
-    "I wish I knew how to do this in the plugin
-    "match separator /\/\/\*\*\*\**\/\//
     
     set backspace=indent,eol,start  " backspace for dummies
     

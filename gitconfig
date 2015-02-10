@@ -3,7 +3,7 @@
 	email = jg.goiri@gmail.com
 [core]
 	editor = vim
-	trustctime = true
+	trustctime = false
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
@@ -14,4 +14,4 @@
 [push]
 	default = upstream
 [alias]
-	undo-commit = reset --soft HEAD^
+    undo-commit = reset --soft HEAD^
