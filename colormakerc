@@ -1,0 +1,5 @@
+$col_default =      $col_black;
+$col_gcc =          $col_magenta;
+$col_filename =     $col_blue;
+$col_linenum =      $col_cyan;
+$col_error =        $tag_error . $col_red . $col_brighten;
