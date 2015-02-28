@@ -76,3 +76,19 @@ snippet dox "Doxygen comment placeholder" b
  * ${0:Only good code has good comments.}
  */
 endsnippet
+
+snippet stdebug "Print your variables to screen" b
+std::cout<<"DEBUGGING: $1 is "<<$1<<std::endl;
+$0
+endsnippet
+
+snippet ERROR "Print an error for your routine" b
+std::cerr<<"ERROR in ${1:Class}::${2:routine}"<<std::endl;
+std::cerr<<"${3:Helpful error message}"<<std::endl;
+exit($4);
+endsnippet
+
+snippet WARNING "Print an error for your routine" b
+std::cerr<<"WARNING in ${1:Class}::${2:routine}"<<std::endl;
+std::cerr<<"${3:Helpful warning message}"<<std::endl;
+endsnippet

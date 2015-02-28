@@ -23,9 +23,11 @@
     Plugin 'freitass/todo.txt-vim'
     Plugin 'tpope/vim-abolish'
     Plugin 'matchit.zip'
+    Plugin 'jlanzarotta/bufexplorer'
+    Plugin 'Konfekt/FastFold'   "fold=syntax slows vim down a LOT
 
-    Plugin 'SirVer/ultisnips'
-    Plugin 'honza/vim-snippets'
+    "Plugin 'SirVer/ultisnips'
+    "Plugin 'honza/vim-snippets'
     
     "Plugin 'ctags.vim'
     "Plugin 'vimlatex'
@@ -115,10 +117,12 @@ let g:tagbar_type_cpp = {
     "set regexpengine=1
 "}
 
+" fastfold {
+    set foldmethod=syntax
+" }
     " General {
     "folding stuff
     colorscheme jgg
-    set foldmethod=syntax
     set foldlevelstart=2
 
     set background=dark         " Assume a dark background
