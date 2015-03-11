@@ -26,8 +26,8 @@
     Plugin 'jlanzarotta/bufexplorer'
     Plugin 'Konfekt/FastFold'   "fold=syntax slows vim down a LOT
 
-    "Plugin 'SirVer/ultisnips'
-    "Plugin 'honza/vim-snippets'
+    Plugin 'SirVer/ultisnips'
+    Plugin 'honza/vim-snippets'
     
     "Plugin 'ctags.vim'
     "Plugin 'vimlatex'
@@ -99,7 +99,8 @@ let g:tagbar_type_cpp = {
 
 " youcompleteme stuff {
     "set sessionoptions=blank,buffers,curdir,folds,help,tabpages,winsize
-    let g:ycm_collect_identifiers_from_tags_files = 1
+    let g:ycm_collect_identifiers_from_tags_files = 0
+"    let g:ycm_seed_identifiers_with_syntax = 1
     let g:ycm_register_as_syntastic_checker = 1
     let g:ycm_autoclose_preview_window_after_insertion = 1
     let g:ycm_confirm_extra_conf = 0    "Just don't be dumb

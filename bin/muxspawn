@@ -6,6 +6,10 @@
     tmux send -t work casmd ENTER
     tmux send -t work clear ENTER
 
+#Start science session
+	echo "Initializing science session..."
+	tmux new-session -d -s science >& /dev/null
+
 #Start double session
 	echo "Initializing double session..."
 	tmux new-session -d -s double >& /dev/null
