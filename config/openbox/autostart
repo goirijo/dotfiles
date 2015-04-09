@@ -1,0 +1,60 @@
+## Note*: some programs, such as 'nm-applet' are run via XDG autostart.
+## Run '/usr/lib/openbox/openbox-xdg-autostart --list' to list any
+## XDG autostarted programs.
+##
+## More information about this can be found at:
+## http://openbox.org/wiki/Help:Autostart
+
+doublescreen&
+
+## GNOME PolicyKit and Keyring
+eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
+
+## Set root window colour
+hsetroot -solid "#2A2A2A" &
+
+## Group start:
+## 3. sleep - give compositor time to start
+## 4. tint2 panel
+(\
+sleep 1s && \
+tint2 \
+) &
+
+## Volume keys daemon
+xfce4-volumed &
+
+## Enable power management
+xfce4-power-manager &
+
+## Start Thunar Daemon
+thunar --daemon &
+
+## Set keyboard settings - 250 ms delay and 25 cps (characters per second) repeat rate.
+## Adjust the values according to your preferances.
+xset r rate 250 25 &
+
+## Turn on/off system beep
+xset b off &
+
+#Open terminal window here and also on d2
+(sleep 5 && terminator-d2) &
+(sleep 2 && terminator) &
+
+#Remap caps lock
+xmodmap ~/.dotfiles/xmodmap
+
+#Spawn tmux
+muxspawn
+
+#Start browsing
+firefox &
+
+#Start conky
+(sleep 2 && conky -c ~/.conky/conkyrc_orange) &
+
+#File syncing
+(sleep 15 && owncloud) &
+
+#Autostart redshift
+(sleep 10s && redshift) &
