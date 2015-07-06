@@ -41,6 +41,7 @@ alias blind='xset dpms force off'
 alias ks='ls'
 alias copy='xclip -selection clipboard'
 alias attach='tmux -2 attach -t'
+alias inkscape='unset GTK_IM_MODULE && inkscape'
 
 #Make autojump start
 . /usr/share/autojump/autojump.sh

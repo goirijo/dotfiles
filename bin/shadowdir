@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for DIR in $(ls -a $1); do
+    ln -s $DIR
+done
