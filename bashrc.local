@@ -35,7 +35,7 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export HISTSIZE=1000000
 
 #Hitting keys is too much work
-alias zz='cd !$'
+alias zz="cd !$"
 alias casmd='cd ~/programming/CASM'
 alias blind='xset dpms force off'
 alias ks='ls'
