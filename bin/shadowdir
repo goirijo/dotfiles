@@ -1,5 +1,5 @@
 #!/bin/bash
 
-for DIR in $(ls -a $1); do
-    ln -s $DIR
+for DIR in $(ls -A $1); do
+    ln -s $1/$DIR
 done

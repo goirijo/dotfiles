@@ -18,6 +18,8 @@
     Plugin 'bling/vim-airline'
     Plugin 'fugitive.vim'
     Plugin 'magic-dot-files/TagHighlight'
+    "Plugin 'xolox/vim-easytags'
+    "Plugin 'xolox/vim-misc'
     Plugin 'Tagbar'
     Plugin 'EasyMotion'
     Plugin 'freitass/todo.txt-vim'
@@ -53,6 +55,10 @@
     " see :h vundle for more details or wiki for FAQ
     " Put your non-Plugin stuff after this line
 
+" }
+
+" command-t {   "
+       set wildignore+=*.ii,*.o,*.os,*.s,*.orig,.git
 " }
 
 " taghighlight {
@@ -241,3 +247,8 @@ endif
         source ~/.vimrc.local
     endif
 " }
+
+"" Diffing for git...{
+"    set diffopt+=iwhite
+"    set diffexpr=""
+"" }
