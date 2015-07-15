@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    pwd > ~/.anchor
+
+else
+    TARGET=$(cat ~/.anchor)
+    cp -ri $@ $TARGET
+fi
