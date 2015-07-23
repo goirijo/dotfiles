@@ -50,3 +50,4 @@ alias inkscape='unset GTK_IM_MODULE && inkscape'
 source ~/bin/wrappers.lib
 
 export DUMP=$HOME/owncloud/dump
+export PATH=$PATH:~/programming/CASM
