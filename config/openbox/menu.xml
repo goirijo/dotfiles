@@ -19,7 +19,7 @@
 		<item label="Web Browser">
 			<action name="Execute">
 				<command>
-					x-www-browser
+					firefox
 				</command>
 			</action>
 		</item>

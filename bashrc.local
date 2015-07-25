@@ -50,4 +50,18 @@ alias inkscape='unset GTK_IM_MODULE && inkscape'
 source ~/bin/wrappers.lib
 
 export DUMP=$HOME/owncloud/dump
-export PATH=$PATH:~/programming/CASM
+#make casm stuff work
+#PYTHONPATH=$PYTHONPATH:/home/jgg/bin/casmpy
+#export PYTHONPATH
+#export CASMBOOST=/home/software/rhel6/boost/1.50.0-intel
+export CASMBIN=$HOME/bin
+export CASMPY=$HOME/bin/casmpy
+export CASMPOTCAR=$HOME/vasp_potentials
+export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:~/programming/CASM/lib/
+export CASMBOOST=/usr/lib/include/boost:~/programming/CASM/lib/
+export CASMBOOST_LIB=$CASMBOOST
+export CASMBOOST_INCLUDE=$CASMBOOST
+export PYTHONPATH="$PYTHONPATH:$HOME/bin/casmpy"
+export DEBUGSTATE=1
+
+export PATH=~/programming/CASM/bin:$PATH
