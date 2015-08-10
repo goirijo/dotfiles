@@ -4,7 +4,7 @@
 	echo "Initializing work session..."
 	tmux new-session -d -s work >& /dev/null
     tmux send -t work casmd ENTER
-    tmux send -t work clear ENTER
+    tmux send -t work reset ENTER
 
 #Start science session
 	echo "Initializing science session..."
