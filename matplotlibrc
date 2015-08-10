@@ -114,18 +114,18 @@ lines.color       : black
 # The font.size property is the default font size for text, given in pts.
 # 12pt is the standard value.
 #
-font.family         : sans-serif
+#font.family         : sans-serif
 #font.serif          : ['Computer Modern']
-font.style          : normal
+#font.style          : normal
 #font.variant        : normal
-font.weight         : normal
+#font.weight         : bold
 #font.stretch        : normal
 # note that font.size controls default text sizes.  To configure
 # special text sizes tick labels, axes, labels, title, etc, see the rc
 # settings for axes and ticks. Special text sizes can be defined
 # relative to font.size, using the following values: xx-small, x-small,
 # small, medium, large, x-large, xx-large, larger, or smaller
-font.size           : 18.0
+font.size           : 26.0
 #font.serif          : Bitstream Vera Serif, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Times New Roman, Times, Palatino, Charter, serif
 #font.sans-serif     : Bitstream Vera Sans, Lucida Grande, Verdana, Geneva, Lucid, Arial, Helvetica, Avant Garde, sans-serif
 #font.cursive        : Apple Chancery, Textile, Zapf Chancery, Sand, cursive
@@ -151,7 +151,8 @@ text.usetex         : True    # use latex for all text handling. The following f
                               # matplotlib mailing list
 #text.latex.unicode : False # use "ucs" and "inputenc" LaTeX packages for handling
                             # unicode strings.
-#text.latex.preamble :  # IMPROPER USE OF THIS FEATURE WILL LEAD TO LATEX FAILURES
+text.latex.preamble :  \boldmath, \usepackage{sfmath}
+                            # IMPROPER USE OF THIS FEATURE WILL LEAD TO LATEX FAILURES
                             # AND IS THEREFORE UNSUPPORTED. PLEASE DO NOT ASK FOR HELP
                             # IF THIS FEATURE DOES NOT DO WHAT YOU EXPECT IT TO.
                             # preamble is a comma separated list of LaTeX statements
@@ -182,10 +183,10 @@ text.usetex         : True    # use latex for all text handling. The following f
 # Note that this "custom" mode is unsupported and may go away in the
 # future.
 #mathtext.cal : cursive
-#mathtext.rm  : serif
+mathtext.rm  : serif
 #mathtext.tt  : monospace
 #mathtext.it  : serif:italic
-#mathtext.bf  : serif:bold
+mathtext.bf  : serif:bold
 #mathtext.sf  : sans
 #mathtext.fontset : cm # Should be 'cm' (Computer Modern), 'stix',
                        # 'stixsans' or 'custom'
@@ -206,10 +207,10 @@ text.usetex         : True    # use latex for all text handling. The following f
 #axes.facecolor      : white   # axes background color
 #axes.edgecolor      : black   # axes edge color
 axes.linewidth      : 5.0     # edge linewidth
-axes.grid           : True   # display grid or not
+axes.grid           : False   # display grid or not
 #axes.titlesize      : large   # fontsize of the axes title
 #axes.labelsize      : medium  # fontsize of the x any y labels
-#axes.labelweight    : normal  # weight of the x and y labels
+#axes.labelweight    : bold  # weight of the x and y labels
 #axes.labelcolor     : black
 #axes.axisbelow      : False   # whether axis gridlines and ticks are below
                               # the axes elements (lines, text, etc)
