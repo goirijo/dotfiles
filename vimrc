@@ -57,6 +57,10 @@
 
 " }
 
+" fugitive {
+    set diffopt+=vertical
+" }
+
 " command-t {   "
        set wildignore+=*.ii,*.o,*.os,*.s,*.orig,.git
 " }

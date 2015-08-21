@@ -61,6 +61,7 @@ export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:~/programming/CASM/lib/
 export CASMBOOST=/usr/lib/include/boost:~/programming/CASM/lib/
 export CASMBOOST_LIB=$CASMBOOST
 export CASMBOOST_INCLUDE=$CASMBOOST
+export CASMPREFIX="~/programming/CASM"
 export PYTHONPATH="$PYTHONPATH:$HOME/bin/casmpy"
 export DEBUGSTATE=1
 
