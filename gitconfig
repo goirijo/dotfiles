@@ -1,16 +1,19 @@
 [user]
-	name = John Goiri
-	email = jg.goiri@gmail.com
+    name = John Goiri
+    email = jg.goiri@gmail.com
 [core]
-	editor = vim
-	trustctime = false
+    editor = vim
+    trustctime = false
 [rerere]
-	enabled = 1
+    enabled = 1
 [push]
-	default = upstream
+    default = upstream
 [alias]
     undo-commit = reset --soft HEAD^
 [mergetool "fugitive"]
-	cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+    cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+[mergetool "mymeld"]
+    cmd = meld --auto-merge --output $MERGED $LOCAL $BASE $REMOTE --diff $BASE $LOCAL --diff $BASE $REMOTE
 [merge]
-    tool=fugitive
+    tool = vimdiff
+    conflictstyle = diff3

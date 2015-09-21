@@ -35,7 +35,7 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export HISTSIZE=1000000
 
 #Hitting keys is too much work
-alias zz='cd !$'
+alias zz="cd !$"
 alias casmd='cd ~/programming/CASM'
 alias blind='xset dpms force off'
 alias ks='ls'
@@ -54,12 +54,9 @@ export DUMP=$HOME/owncloud/dump
 #PYTHONPATH=$PYTHONPATH:/home/jgg/bin/casmpy
 #export PYTHONPATH
 #export CASMBOOST=/home/software/rhel6/boost/1.50.0-intel
-export CASMBIN=$HOME/bin
-export CASMPY=$HOME/bin/casmpy
 export CASMPOTCAR=$HOME/vasp_potentials
-export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
 export CASMPREFIX=$HOME/.local
 
-export CPATH=$HOME/.local/include
-
 export PATH=~/programming/CASM/bin:$PATH
+export CASMPREFIX="$HOME/.local"
+export CPLUS_INCLUDE_PATH="$HOME/.local"

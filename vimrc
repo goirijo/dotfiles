@@ -57,6 +57,12 @@
 
 " }
 
+" fugitive {
+    set diffopt+=vertical
+    set diffopt+=iwhite
+    set diffexpr=""
+"}
+
 " command-t {   "
        set wildignore+=*.ii,*.o,*.os,*.s,*.orig,.git
 " }
@@ -247,8 +253,3 @@ endif
         source ~/.vimrc.local
     endif
 " }
-
-"" Diffing for git...{
-"    set diffopt+=iwhite
-"    set diffexpr=""
-"" }
