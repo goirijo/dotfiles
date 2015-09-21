@@ -993,6 +993,10 @@
       <maximized>no</maximized>
       <decor>no</decor>
     </application>
+    <application name="spotify">
+      <maximized>no</maximized>
+      <decor>no</decor>
+    </application>
     <application name="terminator">
       <maximized>no</maximized>
       <decor>no</decor>
