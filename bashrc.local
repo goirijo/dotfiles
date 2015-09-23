@@ -36,7 +36,7 @@ export HISTSIZE=1000000
 
 #Hitting keys is too much work
 alias zz="cd !$"
-alias casmd='cd ~/programming/CASM'
+alias casmd='cd ~/programming/CASMcode-dev'
 alias blind='xset dpms force off'
 alias ks='ls'
 alias copy='xclip -selection clipboard'
@@ -56,7 +56,8 @@ export DUMP=$HOME/owncloud/dump
 #export CASMBOOST=/home/software/rhel6/boost/1.50.0-intel
 export CASMPOTCAR=$HOME/vasp_potentials
 export CASMPREFIX=$HOME/.local
+export LD_LIBRARY_PATH=$HOME/.local/lib
 
-export PATH=~/programming/CASM/bin:$PATH
+export PATH="$HOME/local/bin:$PATH"
 export CASMPREFIX="$HOME/.local"
-export CPLUS_INCLUDE_PATH="$HOME/.local"
+export CPLUS_INCLUDE_PATH="$HOME/.local/include"
