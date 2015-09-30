@@ -42,6 +42,7 @@ alias ks='ls'
 alias copy='xclip -selection clipboard'
 alias attach='tmux -2 attach -t'
 alias inkscape='unset GTK_IM_MODULE && inkscape'
+alias retanchor='cd $(cat ~/.anchor)'
 
 #Make autojump start
 . /usr/share/autojump/autojump.sh
@@ -50,14 +51,3 @@ alias inkscape='unset GTK_IM_MODULE && inkscape'
 source ~/bin/wrappers.lib
 
 export DUMP=$HOME/owncloud/dump
-#make casm stuff work
-#PYTHONPATH=$PYTHONPATH:/home/jgg/bin/casmpy
-#export PYTHONPATH
-#export CASMBOOST=/home/software/rhel6/boost/1.50.0-intel
-export CASMPOTCAR=$HOME/vasp_potentials
-export CASMPREFIX=$HOME/.local
-export LD_LIBRARY_PATH=$HOME/.local/lib
-
-export PATH="$HOME/local/bin:$PATH"
-export CASMPREFIX="$HOME/.local"
-export CPLUS_INCLUDE_PATH="$HOME/.local/include"
