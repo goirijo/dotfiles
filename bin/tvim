@@ -1,0 +1,5 @@
+#!/bin/bash
+
+SESS=$(tmux display-message -p '#S')
+
+vim --servername $SESS --remote $@

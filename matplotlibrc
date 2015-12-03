@@ -125,7 +125,7 @@ lines.color       : black
 # settings for axes and ticks. Special text sizes can be defined
 # relative to font.size, using the following values: xx-small, x-small,
 # small, medium, large, x-large, xx-large, larger, or smaller
-font.size           : 26.0
+font.size           : 20.0
 #font.serif          : Bitstream Vera Serif, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Times New Roman, Times, Palatino, Charter, serif
 #font.sans-serif     : Bitstream Vera Sans, Lucida Grande, Verdana, Geneva, Lucid, Arial, Helvetica, Avant Garde, sans-serif
 #font.cursive        : Apple Chancery, Textile, Zapf Chancery, Sand, cursive
@@ -221,7 +221,7 @@ axes.grid           : False   # display grid or not
                                    # according to the user's locale.
                                    # For example, use ',' as a decimal
                                    # separator in the fr_FR locale.
-#axes.unicode_minus  : True    # use unicode for the minus symbol
+axes.unicode_minus  : False    # use unicode for the minus symbol
                                # rather than hyphen.  See
                                # http://en.wikipedia.org/wiki/Plus_and_minus_signs#Character_codes
 #axes.color_cycle    : b, g, r, c, m, y, k  # color cycle for plot lines
@@ -264,10 +264,11 @@ ytick.major.width    : 3    # major tick width in points
 #legend.fancybox      : False  # if True, use a rounded box for the
                                # legend, else a rectangle
 #legend.isaxes        : True
-#legend.numpoints     : 2      # the number of points in the legend line
+legend.numpoints     : 1      # the number of points in the legend line
+legend.scatterpoints     : 1      # 
 #legend.fontsize      : large
 #legend.pad           : 0.0    # deprecated; the fractional whitespace inside the legend border
-#legend.borderpad     : 0.5    # border whitespace in fontsize units
+legend.borderpad     : 0.5    # border whitespace in fontsize units
 #legend.markerscale   : 1.0    # the relative size of legend markers vs. original
 # the following dimensions are in axes coords
 #legend.labelsep      : 0.010  # deprecated; the vertical space between the legend entries
@@ -281,7 +282,7 @@ ytick.major.width    : 3    # major tick width in points
 #legend.borderaxespad : 0.5   # the border between the axes and legend edge in fraction of fontsize
 #legend.columnspacing : 2.    # the border between the axes and legend edge in fraction of fontsize
 #legend.shadow        : False
-#legend.frameon       : True   # whether or not to draw a frame around legend
+legend.frameon       : False   # whether or not to draw a frame around legend
 
 ### FIGURE
 # See http://matplotlib.sourceforge.net/api/figure_api.html#matplotlib.figure.Figure
