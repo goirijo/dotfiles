@@ -1,230 +1,252 @@
-<?xml version="1.0" encoding="utf-8"?>
-<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
-	<menu id="root-menu" label="Openbox 3">
-		<item label="Run Program">
-			<action name="Execute">
-				<command>
-					gmrun
-				</command>
-			</action>
-		</item>
-		<separator/>
-		<item label="Terminal">
-			<action name="Execute">
-				<command>
-					terminator
-				</command>
-			</action>
-		</item>
-		<item label="Web Browser">
-			<action name="Execute">
-				<command>
-					firefox
-				</command>
-			</action>
-		</item>
-		<item label="File Manager">
-			<action name="Execute">
-				<command>
-					thunar
-				</command>
-			</action>
-		</item>
-		<item label="Text Editor">
-			<action name="Execute">
-				<command>
-					geany
-				</command>
-			</action>
-		</item>
-		<item label="Media Player">
-			<action name="Execute">
-				<command>
-					vlc
-				</command>
-			</action>
-		</item>
-		<separator/>
-		<menu id="graphics" label="Graphics">
-			<item label="GIMP">
-				<action name="Execute">
-					<command>
-						gimp
-					</command>
-				</action>
-			</item>
-			<menu id="graphicsScreenshots" label="Take Screenshot">
-				<item label="Screenshooter">
-					<action name="Execute">
-						<command>
-							xfce4-screenshooter
-						</command>
-					</action>
-				</item>
-				<separator label="scrot"/>
-				<item label="Now">
-					<action name="Execute">
-						<command>
-							scrot '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp; viewnior ~/images/$f'
-						</command>
-					</action>
-				</item>
-				<item label="In 5 Seconds...">
-					<action name="Execute">
-						<command>
-							scrot -d 5 '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp; viewnior ~/images/$f'
-						</command>
-					</action>
-				</item>
-				<item label="In 10 Seconds...">
-					<action name="Execute">
-						<command>
-							scrot -d 10 '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp; viewnior ~/images/$f'
-						</command>
-					</action>
-				</item>
-				<item label="Selected Area... (click &amp; drag mouse)">
-					<action name="Execute">
-						<command>
-							scrot -s '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp; viewnior ~/images/$f'
-						</command>
-					</action>
-				</item>
-			</menu>
-		</menu>
-		<menu id="multimedia" label="Multimedia">
-			<item label="Clementine">
-				<action name="Execute">
-					<command>clementine</command>
-				</action>
-			</item>
-			<item label="XBMC">
-				<action name="Execute">
-					<command>xbmc</command>
-				</action>
-			</item>
-			<item label="Spotify">
-				<action name="Execute">
-					<command>
-						spotify
-					</command>
-				</action>
-			</item>
-			<item label="VLC Media Player">
-				<action name="Execute">
-					<command>
-						vlc
-					</command>
-				</action>
-			</item>
-			<item label="Volume Control">
-				<action name="Execute">
-					<command>
-						pavucontrol
-					</command>
-				</action>
-			</item>
-			<item label="Xfburn">
-				<action name="Execute">
-					<command>
-						xfburn
-					</command>
-				</action>
-			</item>
-		</menu>
-		<separator/>
-		<menu id="settings" label="Settings">
-			<menu id="obConfig" label="Openbox">
-				<item label="GUI Menu Editor">
-					<action name="Execute">
-						<command>
-							obmenu
-						</command>
-					</action>
-				</item>
-				<item label="GUI Applications Settings Editor">
-					<action name="Execute">
-						<command>
-							obapps
-						</command>
-					</action>
-				</item>
-				<item label="GUI Config Tool">
-					<action name="Execute">
-						<command>
-							obconf
-						</command>
-					</action>
-				</item>
-				<separator/>
-				<item label="Reconfigure">
-					<action name="Reconfigure"/>
-				</item>
-				<item label="Restart">
-					<action name="Restart"/>
-				</item>
-			</menu>
-			<menu id="DisplaySettings" label="Display Settings">
-				<item label="ARandR Screen Layout Editor">
-					<action name="Execute">
-						<command>
-						    arandr
-					    </command>
-					</action>
-				</item>
-				<separator label="Help?"/>
-				<item label="man xrandr">
-					<action name="Execute">
-						<command>
-						    terminator --command=&quot;man xrandr&quot;
-					    </command>
-					</action>
-				</item>
-			</menu>
-			<menu id="Notifications" label="Notifications">
-				<item label="settings">
-					<action name="Execute">
-						<command>xfce4-notifyd-config</command>
-					</action>
-				</item>
-			</menu>
-			<item label="Edit Default Applications">
-				<action name="Execute">
-					<command>
-						terminator --command=&quot;sudo update-alternatives --all&quot;
-					</command>
-				</action>
-			</item>
-			<item label="User Interface Settings">
-				<action name="Execute">
-					<command>
-						lxappearance
-					</command>
-				</action>
-			</item>
-			<item label="Power Management">
-				<action name="Execute">
-					<command>
-						xfce4-power-manager-settings
-					</command>
-				</action>
-			</item>
-			<item label="Screensaver">
-				<action name="Execute">
-					<command>
-						xscreensaver-demo
-					</command>
-				</action>
-			</item>
-		</menu>
-		<menu id="system" label="System">
-			<item label="GParted">
-				<action name="Execute">
-					<command>
-						gksudo gparted
-					</command>
-				</action>
-			</item>
-		</menu>
-	</menu>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+    <menu id="apps-accessories-menu" label="Accessories">
+        <item label="Browse files">
+            <action name="Execute">
+                <command>thunar</command>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+        <item label="Character Map">
+            <action name="Execute">
+                <command>gucharmap</command>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+        <item label="Camera">
+            <action name="Execute">
+                <command>cheese</command>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+        <item label="Partition editor">
+            <action name="Execute">
+                <command>gparted</command>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+    </menu>
+
+    <menu id="apps-net-menu" label="Internet">
+        <item label="Foxfire web browser">
+            <action name="Execute">
+                <command>firefox</command>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+        <item label="Skype">
+            <action name="Execute">
+                <command>skype</command>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+    </menu>
+
+    <menu id="apps-graphics-menu" label="Desk">
+        <item label="Inkscape">
+            <action name="Execute">
+                <command>inkscape</command>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+        <item label="Gimp">
+            <action name="Execute">
+                <command>gimp</command>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+        <item label="Office suite">
+            <action name="Execute">
+                <command>libreoffice</command>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+    </menu>
+
+    <menu id="apps-multimedia-menu" label="Multimedia">
+        <item label="XBMC media center">
+            <action name="Execute">
+                <command>xbmc</command>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+        <item label="VLC media player">
+            <action name="Execute">
+                <command>vlc</command>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+        <item label="Spotify">
+            <action name="Execute">
+                <command>spotify</command>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+    </menu>
+
+    <menu id="apps-games-menu" label="Jokoak">
+        <item label="Steam">
+            <action name="Execute">
+                <command>steam</command>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+        <item label="Skat">
+            <action name="Execute">
+                <command>xskat</command>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+        <item label="Pentobi">
+            <action name="Execute">
+                <command>pentobi</command>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+        <separator />
+        <item label="N64">
+            <action name="Execute">
+                <command>m64py</command>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+        <item label="Super Nintendo">
+            <action name="Execute">
+                <command>zsnes</command>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+        <item label="Play Station">
+            <action name="Execute">
+                <command>pcsx</command>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+    </menu>
+
+    <menu id="apps-utils-menu" label="Utilities">
+        <item label="VirtualBox">
+            <action name="Execute">
+                <command>virtualbox</command>
+                <startupnotify><enabled>yes</enabled></startupnotify>
+            </action>
+        </item>
+        <item label="Terminal">
+            <action name="Execute">
+                <command>terminator</command>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+    </menu>
+
+    <menu id="system-prefs" label="Settings">
+        <item label="Sound Manager">
+            <action name="Execute">
+                <command>pavucontrol</command>
+                <startupnotify><enabled>yes</enabled></startupnotify>
+            </action>
+        </item>
+        <item label="Appearance">
+            <action name="Execute">
+                <command>lxappearance</command>
+                <startupnotify><enabled>yes</enabled></startupnotify>
+            </action>
+        </item>
+        <item label="XFCE4">
+            <action name="Execute">
+                <command>xfce4-session-settings</command>
+                <startupnotify><enabled>yes</enabled></startupnotify>
+            </action>
+        </item>
+    </menu>
+
+    <menu id="system-menu" label="System">
+        <item label="Desktop Settings">
+            <action name="Execute">
+                <command>lxsession-default desktop_manager settings</command>
+                <startupnotify><enabled>yes</enabled></startupnotify>
+            </action>
+        </item>
+        <item label="Openbox Configuration Manager">
+            <action name="Execute">
+                <command>obconf</command>
+                <startupnotify><enabled>yes</enabled></startupnotify>
+            </action>
+        </item>
+        <separator />
+        <item label="Reconfigure Openbox">
+            <action name="Reconfigure" />
+        </item>
+        <item label="Restart Openbox">
+            <action name="Restart" />
+        </item>
+        <separator />
+        <item label="Exit">
+            <action name="Exit" />
+        </item>
+    </menu>
+
+    <menu id="root-menu" label="Lubuntu">
+        <separator label="Shortcuts" />
+        <item label="Terminal" icon="/usr/share/pixmaps/terminator.png">
+            <action name="Execute">
+                <command>terminator</command>
+                <startupnotify>
+                    <enabled>yes</enabled>
+                </startupnotify>
+            </action>
+        </item>
+        <separator label="Applications" />
+        <menu id="apps-accessories-menu" icon="/usr/share/icons/gnome/48x48/categories/applications-accessories.png"/>
+        <menu id="apps-utils-menu" icon="/usr/share/icons/gnome/48x48/categories/applications-utilities.png"/>
+        <menu id="apps-net-menu" icon="/usr/share/icons/gnome/48x48/categories/applications-internet.png"/>
+        <menu id="apps-office-menu" icon="/usr/share/icons/gnome/48x48/categories/applications-office.png"/>
+        <menu id="apps-graphics-menu" icon="/usr/share/icons/gnome/48x48/categories/applications-graphics.png"/>
+        <menu id="apps-multimedia-menu" icon="/usr/share/icons/gnome/48x48/categories/applications-multimedia.png"/>
+        <menu id="apps-games-menu" icon="/usr/share/icons/gnome/48x48/categories/applications-games.png"/>
+        <separator label="System" />
+        <menu id="system-prefs" icon="/usr/share/icons/gnome/48x48/categories/preferences-desktop.png" />
+        <menu id="system-menu" icon="/usr/share/icons/gnome/48x48/categories/applications-system.png" />
+    </menu>
 </openbox_menu>
+

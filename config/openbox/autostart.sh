@@ -5,27 +5,16 @@
 ## More information about this can be found at:
 ## http://openbox.org/wiki/Help:Autostart
 
-doublescreen&
-
-## GNOME PolicyKit and Keyring
-eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
-
 ## Set root window colour
 hsetroot -solid "#2A2A2A" &
-
-## Group start:
-## 3. sleep - give compositor time to start
-## 4. tint2 panel
-(\
-sleep 1s && \
-tint2 \
-) &
 
 ## Volume keys daemon
 xfce4-volumed &
 
-## Enable power management
-xfce4-power-manager &
+## Enable power management and disable xset things
+xset s off
+xset -dpms
+xfce4-power-manager
 
 ## Start Thunar Daemon
 thunar --daemon &
@@ -37,24 +26,36 @@ xset r rate 250 25 &
 ## Turn on/off system beep
 xset b off &
 
+#Rebind keys
+xmodmap /home/mesto/.dotfiles/xmodmap
+
 #Open terminal window here and also on d2
 (sleep 5 && terminator-d2) &
 (sleep 2 && terminator) &
 
-#Remap caps lock
-xmodmap ~/.dotfiles/xmodmap
-
-#Spawn tmux
-muxspawn
-
-#Start browsing
-firefox &
+#Fuck making my own sessions
+muxspawn &
 
 #Start conky
 (sleep 2 && conky -c ~/.conky/conkyrc_orange) &
 
 #File syncing
-(sleep 15 && owncloud) &
+(sleep 3 && owncloud) &
+(sleep 4 && syncthing) &
 
 #Autostart redshift
-(sleep 10s && redshift) &
+(sleep 10 && redshift) &
+
+#Dat music
+(sleep 5 && spotify-d4) &
+
+#Get tint2 going
+(sleep 1 && tint2) &
+
+#Start browsing
+(sleep 1 && firefox) &
+
+## GNOME PolicyKit and Keyring
+#eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
+(sleep 1 && gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)
+

@@ -43,6 +43,7 @@ alias copy='xclip -selection clipboard'
 alias attach='tmux -2 attach -t'
 alias inkscape='unset GTK_IM_MODULE && inkscape'
 alias retanchor='cd $(cat ~/.anchor)'
+alias realcd='cd $(realpath .)'
 
 #Make autojump start
 . /usr/share/autojump/autojump.sh

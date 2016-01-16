@@ -1,6 +1,5 @@
-
 [StatusIcon]
-stepsize=5
+stepsize=11
 lmb_slider=true
 mmb_mute=false
 use_horizontal_slider=false
