@@ -109,6 +109,13 @@
 					</command>
 				</action>
 			</item>
+            <item label="Dia Diagram editor">
+				<action name="Execute">
+					<command>
+						dia
+					</command>
+				</action>
+			</item>
 			<menu id="graphicsScreenshots" label="Take Screenshot">
 				<item label="Screenshooter">
 					<action name="Execute">
@@ -187,13 +194,6 @@
 				<action name="Execute">
 					<command>
 						gftp
-					</command>
-				</action>
-			</item>
-			<item label="Transmission BitTorrent Client">
-				<action name="Execute">
-					<command>
-						transmission-gtk
 					</command>
 				</action>
 			</item>

@@ -1,7 +1,6 @@
 [global_config]
   geometry_hinting = False
   title_transmit_bg_color = "#000000"
-  borderless = True
   title_inactive_bg_color = "#000000"
 [keybindings]
   hide_window = <Shift><Control>a
@@ -9,7 +8,6 @@
   [[default]]
     scrollbar_position = hidden
     use_system_font = False
-    font = DejaVu Sans Mono for Powerline 8
     background_darkness = 0.94
     scrollback_lines = 5000
     background_image = None
@@ -18,12 +16,8 @@
     scroll_on_output = False
     show_titlebar = False
     color_scheme = custom
-    copy_on_selection = True
+    font = DejaVu Sans Mono for Powerline 10
     background_color = "#2e3436"
-    scrollback_infinite = True
-  [[testing]]
-    palette = "#3f3f3f:#cc9393:#7f9f7f:#e3ceab:#dfaf8f:#cc9393:#8cd0d3:#dcdccc:#3f3f3f:#cc9393:#7f9f7f:#e3ceab:#dfaf8f:#cc9393:#8cd0d3:#dcdccc"
-    background_image = None
     scrollback_infinite = True
 [layouts]
   [[default]]
@@ -33,5 +27,5 @@
     [[[window0]]]
       type = Window
       parent = ""
-      size = 958, 1076
+      size = 958, 1073
 [plugins]
