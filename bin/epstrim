@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for f in "$@"; do
+    if [ ${FILE##*.} != "eps" ]; then
+        echo "$FILE is not an eps file!"
+    else
+        mv $f /tmp/$f
+        epstool --copy --bbox /tmp/$f $f
+    fi
+done

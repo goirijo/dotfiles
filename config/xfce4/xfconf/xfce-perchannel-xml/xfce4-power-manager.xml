@@ -6,6 +6,6 @@
     <property name="lid-action-on-ac" type="uint" value="1"/>
     <property name="lid-action-on-battery" type="uint" value="1"/>
     <property name="critical-power-action" type="uint" value="1"/>
-    <property name="show-tray-icon" type="uint" value="1"/>
+    <property name="show-tray-icon" type="int" value="0"/>
   </property>
 </channel>

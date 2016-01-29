@@ -3,3 +3,5 @@
 SESS=$(tmux display-message -p '#S')
 
 vim --servername $SESS --remote $@
+
+tmux select-window -t 0

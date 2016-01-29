@@ -55,6 +55,8 @@ firefox &
 
 #File syncing
 (sleep 15 && owncloud) &
+(sleep 3 && syncthing) &
 
 #Autostart redshift
 (sleep 10s && redshift) &
+
