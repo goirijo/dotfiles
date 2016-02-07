@@ -55,7 +55,5 @@ muxspawn &
 #Start browsing
 (sleep 1 && firefox) &
 
-## GNOME PolicyKit and Keyring
-#eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
-(sleep 1 && gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)
-
+#Backup the current package list
+dpkg --get-selections > $HOME/.config/dpkg.list

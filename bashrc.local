@@ -44,6 +44,7 @@ alias attach='tmux -2 attach -t'
 alias inkscape='unset GTK_IM_MODULE && inkscape'
 alias retanchor='cd $(cat ~/.anchor)'
 alias realcd='cd $(realpath .)'
+alias deja-dup-preferences='sudo deja-dup-preferences'
 
 #Make autojump start
 . /usr/share/autojump/autojump.sh
