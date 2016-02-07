@@ -27,7 +27,7 @@ xset r rate 250 25 &
 xset b off &
 
 #Rebind keys
-xmodmap /home/mesto/.dotfiles/xmodmap
+xmodmap ~/.dotfiles/xmodmap
 
 #Open terminal window here and also on d2
 (sleep 5 && terminator-d2) &

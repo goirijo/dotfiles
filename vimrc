@@ -57,6 +57,9 @@
 
 " }
 
+" This might hurt some plugins
+"    set autochdir
+
 " fugitive {
     set diffopt+=vertical
     set diffopt+=iwhite
