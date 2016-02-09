@@ -16,7 +16,7 @@
     scroll_on_output = False
     show_titlebar = False
     color_scheme = custom
-    font = DejaVu Sans Mono for Powerline 10
+    font = DejaVu Sans Mono for Powerline 8
     background_color = "#2e3436"
     scrollback_infinite = True
 [layouts]
