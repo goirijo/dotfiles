@@ -36,6 +36,9 @@ xmodmap ~/.dotfiles/xmodmap
 #Fuck making my own sessions
 muxspawn &
 
+#Bluetooth plz
+(sleep 2 && blueman-applet) &
+
 #Start conky
 (sleep 2 && conky -c ~/.conky/conkyrc_orange) &
 
