@@ -8,6 +8,7 @@
   [[default]]
     scrollbar_position = hidden
     use_system_font = False
+    font = DejaVu Sans Mono for Powerline 10
     background_darkness = 0.94
     scrollback_lines = 5000
     background_image = None
@@ -16,7 +17,7 @@
     scroll_on_output = False
     show_titlebar = False
     color_scheme = custom
-    font = DejaVu Sans Mono for Powerline 10
+    copy_on_selection = True
     background_color = "#2e3436"
     scrollback_infinite = True
 [layouts]
