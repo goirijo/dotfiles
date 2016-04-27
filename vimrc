@@ -242,6 +242,7 @@ endif
     "filetype plugin indent on
     "set matchpairs+=<:>            	" match, to be used with %
     command Stylize execute "%! astyle"
+    command CountInsert %s/^/\=line('.')."\t"/
     nnoremap <leader>a :Stylize<CR>
 
 
