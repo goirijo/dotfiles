@@ -13,11 +13,14 @@
     Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
     Plugin 'TeX-PDF'
     Plugin 'Valloric/YouCompleteMe'
-    Plugin 'gerw/vim-HiLinkTrace'
-    Plugin 'Command-T'
-    Plugin 'bling/vim-airline'
+    "Plugin 'gerw/vim-HiLinkTrace'
+    Plugin 'wincent/command-t'
+    Plugin 'vim-airline/vim-airline'
+    Plugin 'vim-airline/vim-airline-themes'
     Plugin 'fugitive.vim'
-    Plugin 'magic-dot-files/TagHighlight'
+    "Plugin 'magic-dot-files/TagHighlight'
+    "Plugin 'bbchung/clighter'
+    Plugin 'jeaye/color_coded'
     "Plugin 'xolox/vim-easytags'
     "Plugin 'xolox/vim-misc'
     Plugin 'Tagbar'
@@ -107,7 +110,7 @@ let g:tagbar_type_cpp = {
   let g:airline#extensions#tabline#enabled = 1
   set laststatus=2
   let g:airline_theme='wombat'
-  "let g:airline_left_sep=''
+  let g:airline_left_sep=''
   "let g:airline_right_sep=''
   "set noshowmode
 " }

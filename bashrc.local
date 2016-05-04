@@ -36,7 +36,7 @@ export HISTSIZE=1000000
 
 #Hitting keys is too much work
 alias zz="cd !$"
-alias casmd='cd ~/programming/CASMcode-dev'
+alias casmd='cd $CASMDEV'
 alias blind='xset dpms force off'
 alias ks='ls'
 alias copy='xclip -selection clipboard'
@@ -46,6 +46,9 @@ alias retanchor='cd $(cat ~/.anchor)'
 alias realcd='cd $(realpath .)'
 alias deja-dup-preferences='sudo deja-dup-preferences'
 alias cd6='cd ../../../../../../'
+alias cd5='cd ../../../../../'
+alias cd4='cd ../../../../'
+alias cd3='cd ../../../'
 
 #Make autojump start
 . /usr/share/autojump/autojump.sh

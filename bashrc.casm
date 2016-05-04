@@ -1,10 +1,13 @@
 #make casm stuff work
-#PYTHONPATH=$PYTHONPATH:/home/jgg/bin/casmpy
-#export PYTHONPATH
-#export CASMBOOST=/home/software/rhel6/boost/1.50.0-intel
+export CASMDEV=$HOME/programming/CASMcode-dev
+
 export CASMPOTCAR=$HOME/vasp_potentials
-export CASMPREFIX=$HOME/.local
+export CASMPREFIX=$CASMDEV/builds/target
 export LD_LIBRARY_PATH=$HOME/.local/lib
-export PATH=$HOME/local/bin:$PATH
 export CPLUS_INCLUDE_PATH=$HOME/.local/include
 
+#Switch back here if you ditch versioning
+#export CASMPOTCAR=$HOME/vasp_potentials
+#export CASMPREFIX=$HOME/.local
+#export LD_LIBRARY_PATH=$HOME/.local/lib
+#export CPLUS_INCLUDE_PATH=$HOME/.local/include
