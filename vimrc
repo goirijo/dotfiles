@@ -13,14 +13,14 @@
     Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
     Plugin 'TeX-PDF'
     Plugin 'Valloric/YouCompleteMe'
-    "Plugin 'gerw/vim-HiLinkTrace'
+    Plugin 'gerw/vim-HiLinkTrace'
     Plugin 'wincent/command-t'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'fugitive.vim'
-    "Plugin 'magic-dot-files/TagHighlight'
+    Plugin 'magic-dot-files/TagHighlight'
     "Plugin 'bbchung/clighter'
-    Plugin 'jeaye/color_coded'
+    "Plugin 'jeaye/color_coded'
     "Plugin 'xolox/vim-easytags'
     "Plugin 'xolox/vim-misc'
     Plugin 'Tagbar'
@@ -260,3 +260,4 @@ endif
         source ~/.vimrc.local
     endif
 " }
+
