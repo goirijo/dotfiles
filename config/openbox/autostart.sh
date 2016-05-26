@@ -40,7 +40,7 @@ muxspawn &
 (sleep 2 && blueman-applet) &
 
 #Start conky
-(sleep 2 && conky -c ~/.conky/conkyrc_orange) &
+(sleep 2 && conky -c ~/.conky/conkyrc) &
 
 #File syncing
 (sleep 3 && owncloud) &

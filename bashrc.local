@@ -49,6 +49,7 @@ alias cd6='cd ../../../../../../'
 alias cd5='cd ../../../../../'
 alias cd4='cd ../../../../'
 alias cd3='cd ../../../'
+alias remouse='sudo modprobe -r psmouse && sudo modprobe psmouse'
 
 #Make autojump start
 . /usr/share/autojump/autojump.sh
@@ -57,3 +58,6 @@ alias cd3='cd ../../../'
 source ~/bin/wrappers.lib
 
 export DUMP=$HOME/owncloud/dump
+
+#Fuck emacs
+set -o vi
