@@ -69,6 +69,11 @@
     set diffexpr=""
 "}
 
+" color_coded {
+ let g:color_coded_filetypes = ['cc', 'hh', 'hpp', 'c', 'cpp', 'objc']
+" }
+
+
 " command-t {   "
        set wildignore+=*.ii,*.o,*.os,*.s,*.orig,.git
 " }
@@ -122,6 +127,7 @@ let g:tagbar_type_cpp = {
     let g:ycm_register_as_syntastic_checker = 1
     let g:ycm_autoclose_preview_window_after_insertion = 1
     let g:ycm_confirm_extra_conf = 0    "Just don't be dumb
+     let g:ycm_disable_for_files_larger_than_kb = 100
 " }
 
 " easytags {
