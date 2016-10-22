@@ -3,6 +3,7 @@
     email = jg.goiri@gmail.com
 [core]
     editor = vim
+	trustctime = false
 [rerere]
     enabled = 1
 [alias]
