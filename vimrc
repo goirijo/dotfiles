@@ -30,18 +30,20 @@
     Plugin 'matchit.zip'
     Plugin 'jlanzarotta/bufexplorer'
     Plugin 'Konfekt/FastFold'   "fold=syntax slows vim down a LOT
+    "Plugin 'lh-cpp'
+    Plugin 'DoxygenToolkit.vim'
 
     Plugin 'SirVer/ultisnips'
     Plugin 'honza/vim-snippets'
     
-    "Plugin 'ctags.vim'
-    "Plugin 'vimlatex'
-    "Plugin 'taglist.vim'
-    "Plugin 'GetLatestVimScripts'
-    "Plugin 'vim-misc'
-    "Plugin 'easytags.vim'
-    "Plugin 'blueyed/vim-diminactive'
-    "Plugin 'nacitar/terminalkeys.vim'
+    Plugin 'ctags.vim'
+    Plugin 'vimlatex'
+    Plugin 'taglist.vim'
+    Plugin 'GetLatestVimScripts'
+    Plugin 'vim-misc'
+    Plugin 'easytags.vim'
+    Plugin 'blueyed/vim-diminactive'
+    Plugin 'nacitar/terminalkeys.vim'
     
     " All of your Plugins must be added before the following line
     call vundle#end()            " required
@@ -75,7 +77,7 @@
 
 
 " command-t {   "
-       set wildignore+=*.ii,*.o,*.os,*.s,*.orig,.git
+       set wildignore+=*.ii,*.o,*.os,*.s,*.orig,.git,builds/*
 " }
 
 " taghighlight {
@@ -168,6 +170,7 @@ let g:tagbar_type_cpp = {
         " render properly when inside 256-color tmux and GNU screen.
         " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
         set t_ut=
+        "set term=screen-256color
     "endif
    
     "load tags
@@ -254,6 +257,7 @@ endif
     command CountInsert %s/^/\=line('.')."\t"/
     nnoremap <leader>a :Stylize<CR>
 
+    au BufNewFile,BufRead Makemodule.am set filetype=automake
 
 "}
 

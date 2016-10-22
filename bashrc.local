@@ -1,12 +1,13 @@
 export GNUTERM=x11
 
-if [[ $SSH_TTY ]]
-then
-    TERM=xterm-color
-else
-    TERM=xterm-256color
-fi
-export TERM
+#if [[ $SSH_TTY ]]
+#then
+#    TERM=xterm-color
+#else
+#    TERM=xterm-256color
+#fi
+#TERM=xterm-256color
+#export TERM
 
 #I don't need any of this flow control nonsense
 stty -ixon
@@ -61,3 +62,5 @@ export DUMP=$HOME/owncloud/dump
 
 #Fuck emacs
 set -o vi
+
+eval "$(thefuck --alias)"
