@@ -1,3 +1,16 @@
+global !p
+def prespace(snip):
+	prespace=re.match("^ *",snip.v.text).group(0)
+	snip+=prespace
+endglobal
+	
+global !p
+def smartshift(snip):
+	prespace=re.match("^ *",snip.v.text).group(0)
+	snip.shift()
+	snip+=prespace
+endglobal
+
 snippet defreturn "Member declaration to definition" b
 `!p snip.rv=re.match("^ *",snip.v.text).group(0)`/**
 `!p snip.rv=re.match("^ *",snip.v.text).group(0)` * ${3:I would never forget to make a Doxygen explanation for a new routine.}
@@ -63,7 +76,7 @@ snip+=prespace`$0
 endsnippet
 
 snippet guard "Make an include guard" b
-#ifndef ${1:MYFILE_??}
+#ifndef ${1:MYFILE}_HH
 #define $1
 
 $0
@@ -91,4 +104,27 @@ endsnippet
 snippet WARNING "Print an error for your routine" b
 std::cerr<<"WARNING in ${1:Class}::${2:routine}"<<std::endl;
 std::cerr<<"${3:Helpful warning message}"<<std::endl;
+endsnippet
+
+snippet forit "Iterator loop from begin() to end()" b
+for(auto ${1:it}=${2:container}.begin(); $1!=$2.end(); ++$1)
+{`!p smartshift(snip)` $0
+}
+endsnippet
+
+snippet template "Template for typename" b
+template<typename ${1:T}>
+$0
+endsnippet
+
+snippet ifcontains "Use std::find to see if a container holds a value" b
+if(std::find(${1:container}.begin(), $1.end(), ${2:searchvalue})!=$1.end())
+{`!p smartshift(snip)` $0
+}
+endsnippet
+
+snippet ifnotcontains "Use std::find to see if a container does not hold a value" b
+if(std::find(${1:container}.begin(), $1.end(), ${2:searchvalue})==$1.end())
+{`!p smartshift(snip)` $0
+}
 endsnippet

@@ -145,12 +145,13 @@ let g:tagbar_type_cpp = {
 "}
 
 " fastfold {
-    set foldmethod=syntax
+    "set foldmethod=syntax
 " }
     " General {
     "folding stuff
     colorscheme jgg
     set foldlevelstart=2
+    set foldmethod=syntax
 
     set background=dark         " Assume a dark background
     syntax on 					" syntax highlighting
