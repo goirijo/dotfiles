@@ -2,7 +2,7 @@
 
 #Start work session
 	echo "Initializing work session..."
-	tmux new-session -d -s work >& /dev/null
+	tmux new-session -d -s  work >& /dev/null
     tmux send -t work casmd ENTER
     tmux send -t work reset ENTER
 

@@ -10,40 +10,50 @@
     Plugin 'gmarik/Vundle.vim'
 
     Plugin 'goirijo/vim-jgg-colorscheme'
-    Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
-    Plugin 'TeX-PDF'
     Plugin 'Valloric/YouCompleteMe'
+    Plugin 'vim-latex/vim-latex'
+    " Plugin 'TeX-PDF'
     Plugin 'gerw/vim-HiLinkTrace'
     Plugin 'wincent/command-t'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'fugitive.vim'
-    Plugin 'magic-dot-files/TagHighlight'
-    "Plugin 'bbchung/clighter'
-    "Plugin 'jeaye/color_coded'
-    "Plugin 'xolox/vim-easytags'
-    "Plugin 'xolox/vim-misc'
+    Plugin 'jeaye/color_coded'
+    Plugin 'morhetz/gruvbox'
     Plugin 'Tagbar'
     Plugin 'EasyMotion'
     Plugin 'freitass/todo.txt-vim'
     Plugin 'tpope/vim-abolish'
-    Plugin 'matchit.zip'
+    Plugin 'tpope/vim-surround' 
+    Plugin 'tpope/vim-repeat' 
+    Plugin 'tpope/vim-commentary' 
     Plugin 'jlanzarotta/bufexplorer'
     Plugin 'Konfekt/FastFold'   "fold=syntax slows vim down a LOT
-    "Plugin 'lh-cpp'
+    Plugin 'LargeFile'
     Plugin 'DoxygenToolkit.vim'
-
     Plugin 'SirVer/ultisnips'
     Plugin 'honza/vim-snippets'
     
-    Plugin 'ctags.vim'
-    Plugin 'vimlatex'
-    Plugin 'taglist.vim'
-    Plugin 'GetLatestVimScripts'
-    Plugin 'vim-misc'
-    Plugin 'easytags.vim'
-    Plugin 'blueyed/vim-diminactive'
-    Plugin 'nacitar/terminalkeys.vim'
+    "
+    "Plugin 'GetLatestVimScripts'
+    "Plugin 'vim-misc'
+    "Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
+    "Plugin 'matchit.zip'
+    "Plugin 'bbchung/clighter'
+    "Plugin 'xolox/vim-easytags'
+    "Plugin 'xolox/vim-misc'
+    "Plugin 'lh-cpp'
+    "Plugin 'NigoroJr/color_coded-colorschemes'
+    "Plugin 'JBakamovic/yaflandia'
+    "Plugin 'magic-dot-files/TagHighlight'
+    "Plugin 'CSApprox'
+    "Plugin 'guicolorscheme.vim'
+    "Plugin 'ctags.vim'
+    "Plugin 'vimlatex'
+    "Plugin 'taglist.vim'
+    "Plugin 'easytags.vim'
+    "Plugin 'blueyed/vim-diminactive'
+    "Plugin 'nacitar/terminalkeys.vim'
     
     " All of your Plugins must be added before the following line
     call vundle#end()            " required
@@ -65,6 +75,15 @@
 " This might hurt some plugins
 "    set autochdir
 
+" vim-latex{
+filetype plugin on
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_MultipleCompileFormats='pdf, aux'
+
+" }
+
 " fugitive {
     set diffopt+=vertical
     set diffopt+=iwhite
@@ -77,7 +96,8 @@
 
 
 " command-t {   "
-       set wildignore+=*.ii,*.o,*.os,*.s,*.orig,.git,builds/*
+       set wildignore+=*.ii,*.o,*.os,*.s,*.orig,.git,builds/*,*.pyc,*.pyo
+       let g:CommandTTraverseSCM = 'pwd'
 " }
 
 " taghighlight {
@@ -130,6 +150,7 @@ let g:tagbar_type_cpp = {
     let g:ycm_autoclose_preview_window_after_insertion = 1
     let g:ycm_confirm_extra_conf = 0    "Just don't be dumb
      let g:ycm_disable_for_files_larger_than_kb = 100
+     map <F9> :YcmCompleter FixIt<CR>
 " }
 
 " easytags {
@@ -149,10 +170,13 @@ let g:tagbar_type_cpp = {
 " }
     " General {
     "folding stuff
-    colorscheme jgg
     set foldlevelstart=2
     set foldmethod=syntax
 
+    let g:gruvbox_italic=1
+    let g:gruvbox_contrast_dark = 'hard'
+    set t_Co=256
+    colorscheme gruvbox
     set background=dark         " Assume a dark background
     syntax on 					" syntax highlighting
     "set mouse=a					" automatically enable mouse usage
@@ -181,7 +205,6 @@ let g:tagbar_type_cpp = {
         au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
     endif
     
-    colorscheme jgg
     
     set backspace=indent,eol,start  " backspace for dummies
     
@@ -256,6 +279,7 @@ endif
     "set matchpairs+=<:>            	" match, to be used with %
     command Stylize execute "%! astyle"
     command CountInsert %s/^/\=line('.')."\t"/
+    "nnoremap <leader>a :Stylize <bar> :set foldmethod=syntax<CR>
     nnoremap <leader>a :Stylize<CR>
 
     au BufNewFile,BufRead Makemodule.am set filetype=automake
