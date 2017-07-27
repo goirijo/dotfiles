@@ -930,7 +930,7 @@
       <maximized>yes</maximized>
       <decor>no</decor>
     </application>
-    <application name="terminator">
+    <application class="Terminator">
       <maximized>no</maximized>
       <decor>no</decor>
       <position force="yes">
