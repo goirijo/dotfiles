@@ -1,0 +1,32 @@
+casmroot()
+{
+    CURR_DIR=$(pwd)
+    ROOT="/"
+    
+    while [ ! -e .casm ]; do
+        if [ "$(pwd)" != "$ROOT" ]; then
+            cd ..
+        else
+            cd $CURR_DIR
+            break
+        fi
+    done
+}
+
+_countdown()
+{
+    for (( i=30; i>0; i--)); do
+        printf "\rStarting script in $i seconds.  Hit any key to continue."
+        read -s -n 1 -t 1 key
+        if [ $? -eq 0 ]
+        then
+            break
+        fi
+    done
+    echo -e
+}
+
+scriptroot()
+{
+    echo "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+}

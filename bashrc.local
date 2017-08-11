@@ -64,4 +64,5 @@ export DUMP=$HOME/owncloud/dump
 #Fuck emacs
 set -o vi
 
+from casm.learn.linear_model import LinearRegressionForLOOCV, DumbRegression
 eval "$(thefuck --alias)"
