@@ -26,6 +26,11 @@ _countdown()
     echo -e
 }
 
+_enter_to_continue()
+{
+    read -p "Press enter to continue"
+}
+
 scriptroot()
 {
     echo "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
