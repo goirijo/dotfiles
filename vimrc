@@ -34,6 +34,9 @@
     Plugin 'SirVer/ultisnips'
     Plugin 'honza/vim-snippets'
     Plugin 'mindriot101/vim-yapf'
+    Plugin 'rhysd/vim-clang-format'
+    Plugin 'lyuts/vim-rtags'
+    Plugin 'szw/vim-maximizer'
     " Plugin 'gioele/vim-autoswap'
     
     "
@@ -77,8 +80,28 @@
 " This might hurt some plugins
 "    set autochdir
 
+" vim-maximizer{
+" Maximize window with F3
+" nnoremap <silent><F3> :MaximizerToggle<CR>        "These are the default
+" vnoremap <silent><F3> :MaximizerToggle<CR>gv
+" inoremap <silent><F3> <C-o>:MaximizerToggle<CR>
+" }
+
 " vim-yapf{
 let g:yapf_style = "google"
+" }
+
+" vim-clang-format{
+let g:clang_format#code_style = "llvm"
+let g:clang_format#style_options = {
+            \ "AccessModifierOffset" : -4,
+            \ "AllowShortIfStatementsOnASingleLine" : "false",
+            \ "AlwaysBreakTemplateDeclarations" : "true",
+            \ "Standard" : "C++11",
+            \ "ColumnLimit" : "120",
+            \ "BinPackParameters" : "false",
+            \ "ConstructorInitializerAllOnOneLineOrOnePerLine" : "true",
+            \ "BreakBeforeBraces" : "Allman"}
 " }
 
 " vim-latex{
@@ -87,6 +110,22 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats='pdf, aux'
+let g:Tex_IgnoredWarnings =
+            \"Underfull\n".
+            \"Overfull\n".
+            \"specifier changed to\n".
+            \"You have requested\n".
+            \"Missing number, treated as zero.\n".
+            \"There were undefined references\n".
+            \"Citation %.%# undefined\n".
+            \"Label(s) may have changed"
+let g:Tex_IgnoreLevel=8
+
+" For when you want to switch to XeTeX
+function SetXeTex()
+        let g:Tex_CompileRule_pdf = 'xelatex -aux-directory=F:/Vim/my_latex_doc/temp --synctex=-1 -src-specials -interaction=nonstopmode $*'
+    endfunction
+    map <Leader>lx :<C-U>call SetXeTex()<CR>
 
 " }
 
@@ -104,6 +143,12 @@ let g:Tex_MultipleCompileFormats='pdf, aux'
 " command-t {   "
        set wildignore+=*.ii,*.o,*.os,*.s,*.orig,.git,builds/*,*.pyc,*.pyo
        let g:CommandTTraverseSCM = 'pwd'
+
+       "Don't jump to the previous tab!!
+       let g:CommandTAcceptSelectionCommand = 'e'
+       " let g:CommandTAcceptSelectionSplitCommand = 'sp'
+       " let g:CommandTAcceptSelectionTabCommand = 'CommandTOpen tabe'
+       " let g:CommandTAcceptSelectionVSplitCommand = 'vs'
 " }
 
 " taghighlight {
@@ -298,8 +343,8 @@ endif
 "}
 
 " Use local vimrc if available {
-    if filereadable(expand("~/.vimrc.local"))
-        source ~/.vimrc.local
+    if filereadable(glob("./.vimrc.local"))
+        source ./.vimrc.local
     endif
 " }
 

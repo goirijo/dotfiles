@@ -7,9 +7,6 @@
 #
 #Once casm is built, all files are dumped into $CASMPREFIX
 #By invoking `casmlink`, all the needed casm files are soft linked into .local
-#and a copy of the current build is made, identified by its version number.
-#The version number can be passed to this script to link to an older version
-#rather than the latest build.
 
 if [[ $# > 1 ]]; then
     echo "Too many arguments!"
@@ -19,7 +16,9 @@ fi
 LOCAL=$HOME/.local
 
 if [[ -z "$1" ]]; then
-    VERDIR=$CASMDEV/builds/target
+    echo "You must provide a build directory to link to"
+    exit
+    # VERDIR=$CASMDEV/builds/target
 else
     VERDIR=$CASMDEV/builds/$1
 fi
