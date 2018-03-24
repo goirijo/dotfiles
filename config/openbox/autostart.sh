@@ -30,7 +30,7 @@ xset b off &
 xmodmap ~/.dotfiles/xmodmap
 
 #Open terminal window here and also on d2
-(sleep 5 && terminator-d2) &
+# (sleep 5 && terminator-d2) &
 (sleep 2 && terminator) &
 
 #Fuck making my own sessions

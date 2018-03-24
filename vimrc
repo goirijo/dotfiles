@@ -126,6 +126,7 @@ let g:tagbar_type_cpp = {
 
 " ultisnips {
   set runtimepath+=~/.dotfiles/
+  let g:ultisnips_python_style="numpy"
   let g:UltiSnipsSnippetsDir="~/.dotfiles/UltiSnips"
 "  let g:UltiSnipsSnippetDirectories=["~/.dotfiles/UltiSnips"]
   let g:UltiSnipsExpandTrigger="<f5>"

@@ -41,7 +41,7 @@ alias casmd='cd $CASMDEV'
 alias blind='xset dpms force off'
 alias ks='ls'
 alias copy='xclip -selection clipboard'
-alias attach='tmux -2 attach -t'
+# alias attach='tmux -2 attach -t'
 alias inkscape='unset GTK_IM_MODULE && inkscape'
 alias retanchor='cd $(cat ~/.anchor)'
 alias realcd='cd $(realpath .)'
@@ -64,5 +64,4 @@ export DUMP=$HOME/owncloud/dump
 #Fuck emacs
 set -o vi
 
-from casm.learn.linear_model import LinearRegressionForLOOCV, DumbRegression
 eval "$(thefuck --alias)"

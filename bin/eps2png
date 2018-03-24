@@ -5,7 +5,7 @@ do
     if [ ${FILE##*.} != "eps" ]; then
         echo "$FILE is not an eps file!"
     else
-        convert -density 300 -rotate 90 $FILE ${FILE%.*}.png
+        convert -density 500 -rotate 90 $FILE ${FILE%.*}.png
     fi
 done
 
