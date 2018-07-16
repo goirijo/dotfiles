@@ -37,6 +37,7 @@
     Plugin 'rhysd/vim-clang-format'
     Plugin 'lyuts/vim-rtags'
     Plugin 'szw/vim-maximizer'
+    Plugin 'mileszs/ack.vim'
     " Plugin 'gioele/vim-autoswap'
     
     "
@@ -99,6 +100,7 @@ let g:clang_format#style_options = {
             \ "AlwaysBreakTemplateDeclarations" : "true",
             \ "Standard" : "C++11",
             \ "ColumnLimit" : "120",
+            \ "PointerAlignment" : "Left",
             \ "BinPackParameters" : "false",
             \ "ConstructorInitializerAllOnOneLineOrOnePerLine" : "true",
             \ "BreakBeforeBraces" : "Allman"}
@@ -329,12 +331,12 @@ endif
     set softtabstop=4 				" let backspace delete indent
     "filetype plugin indent on
     "set matchpairs+=<:>            	" match, to be used with %
-    command Stylize execute "%! astyle"
     command CountInsert %s/^/\=line('.')."\t"/
     "nnoremap <leader>a :Stylize <bar> :set foldmethod=syntax<CR>
-    nnoremap <leader>a :Stylize<CR>
+    nnoremap <leader>a :ClangFormat<CR>
 
     au BufNewFile,BufRead Makemodule.am set filetype=automake
+    au BufNewFile,BufRead *.cxpy set filetype=cpp
 
 "}
 
