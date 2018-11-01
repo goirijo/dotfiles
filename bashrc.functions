@@ -13,6 +13,11 @@ casmroot()
     done
 }
 
+anchorcd()
+{
+    cd $(cat ~/.anchor)
+}
+
 _countdown()
 {
     for (( i=30; i>0; i--)); do
@@ -26,7 +31,19 @@ _countdown()
     echo -e
 }
 
+_enter_to_continue()
+{
+    read -p "Press enter to continue"
+}
+
 scriptroot()
 {
     echo "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+}
+
+...()
+{
+    for i in $(seq 1 $1); do
+        cd ..
+    done
 }

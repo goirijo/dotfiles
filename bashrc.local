@@ -35,29 +35,9 @@ shopt -s histappend
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export HISTSIZE=1000000
 
-#Hitting keys is too much work
-alias zz="cd !$"
-alias casmd='cd $CASMDEV'
-alias blind='xset dpms force off'
-alias ks='ls'
-alias copy='xclip -selection clipboard'
-# alias attach='tmux -2 attach -t'
-alias inkscape='unset GTK_IM_MODULE && inkscape'
-alias retanchor='cd $(cat ~/.anchor)'
-alias realcd='cd $(realpath .)'
-alias deja-dup-preferences='sudo deja-dup-preferences'
-alias cd6='cd ../../../../../../'
-alias cd5='cd ../../../../../'
-alias cd4='cd ../../../../'
-alias cd3='cd ../../../'
-alias remouse='sudo modprobe -r psmouse && sudo modprobe psmouse'
-alias casmtest='$CASMDEV/builds/debugable/bin/casm'
 
 #Make autojump start
 . /usr/share/autojump/autojump.sh
-
-#source wrappers
-source ~/bin/wrappers.lib
 
 export DUMP=$HOME/owncloud/dump
 

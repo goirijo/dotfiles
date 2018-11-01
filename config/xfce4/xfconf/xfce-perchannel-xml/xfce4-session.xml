@@ -3,6 +3,7 @@
 <channel name="xfce4-session" version="1.0">
   <property name="general" type="empty">
     <property name="FailsafeSessionName" type="empty"/>
+    <property name="StartAssistiveTechnologies" type="bool" value="false"/>
   </property>
   <property name="sessions" type="empty">
     <property name="Failsafe" type="empty">
@@ -28,5 +29,8 @@
   </property>
   <property name="chooser" type="empty">
     <property name="AlwaysDisplay" type="bool" value="false"/>
+  </property>
+  <property name="compat" type="empty">
+    <property name="LaunchKDE" type="bool" value="false"/>
   </property>
 </channel>

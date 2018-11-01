@@ -1,0 +1,12 @@
+#!/bin/bash
+
+for file in $@; do
+    if [ -e $file ]; then
+        if [ -e ${file}.bak ]; then
+            rm -r ${file}.bak
+        fi
+        cp -rH ${file%/}{,.bak}
+    else
+        echo $file not found
+    fi
+done

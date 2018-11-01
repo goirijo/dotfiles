@@ -9,11 +9,11 @@
 [alias]
     undo-commit = reset --soft HEAD^
 [mergetool "fugitive"]
-    cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+	cmd = vim -f -c \"Gdiff\" \"$MERGED\"
 [mergetool "mymeld"]
     cmd = meld --auto-merge --output $MERGED $LOCAL $BASE $REMOTE --diff $BASE $LOCAL --diff $BASE $REMOTE
 [merge]
-    tool = vimdiff
+	tool = fugitive
     conflictstyle = diff3
 [push]
 	default = simple

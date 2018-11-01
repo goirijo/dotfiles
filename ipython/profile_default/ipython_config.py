@@ -530,3 +530,5 @@ c.TerminalInteractiveShell.editor = u'vim'
 # If True, any %store-d variables will be automatically restored when IPython
 # starts.
 # c.StoreMagics.autorestore = False
+
+c.TerminalInteractiveShell.editing_mode = 'vi'

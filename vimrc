@@ -33,6 +33,12 @@
     Plugin 'DoxygenToolkit.vim'
     Plugin 'SirVer/ultisnips'
     Plugin 'honza/vim-snippets'
+    Plugin 'mindriot101/vim-yapf'
+    Plugin 'rhysd/vim-clang-format'
+    Plugin 'lyuts/vim-rtags'
+    Plugin 'szw/vim-maximizer'
+    Plugin 'mileszs/ack.vim'
+    " Plugin 'gioele/vim-autoswap'
     
     "
     "Plugin 'GetLatestVimScripts'
@@ -75,12 +81,57 @@
 " This might hurt some plugins
 "    set autochdir
 
+" vim-maximizer{
+" Maximize window with F3
+" nnoremap <silent><F3> :MaximizerToggle<CR>        "These are the default
+" vnoremap <silent><F3> :MaximizerToggle<CR>gv
+" inoremap <silent><F3> <C-o>:MaximizerToggle<CR>
+" }
+
+" vim-yapf{
+let g:yapf_style = "google"
+" }
+
+" vim-clang-format{
+let g:clang_format#code_style = "llvm"
+let g:clang_format#detect_style_file = 1
+let g:clang_format#style_options = {
+            \ "AccessModifierOffset" : -4,
+            \ "AllowShortIfStatementsOnASingleLine" : "false",
+            \ "AlwaysBreakTemplateDeclarations" : "true",
+            \ "Standard" : "C++11",
+            \ "ColumnLimit" : "120",
+            \ "PointerAlignment" : "Left",
+            \ "BinPackParameters" : "false",
+            \ "ConstructorInitializerAllOnOneLineOrOnePerLine" : "true",
+            \ "IndentWidth"  :     4,
+            \ "BreakBeforeBraces" : "Allman"}
+" }
+
 " vim-latex{
 filetype plugin on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats='pdf, aux'
+let g:Tex_IgnoredWarnings =
+            \"Underfull\n".
+            \"Overfull\n".
+            \"specifier changed to\n".
+            \"You have requested\n".
+            \"Missing number, treated as zero.\n".
+            \"There were undefined references\n".
+            \"Citation %.%# undefined\n".
+            \"Label(s) may have changed\n".
+            \"A float is stuck \n".
+            \"option without twoside option is"
+let g:Tex_IgnoreLevel=10
+
+" For when you want to switch to XeTeX
+function SetXeTex()
+        let g:Tex_CompileRule_pdf = 'xelatex -aux-directory=F:/Vim/my_latex_doc/temp --synctex=-1 -src-specials -interaction=nonstopmode $*'
+    endfunction
+    map <Leader>lx :<C-U>call SetXeTex()<CR>
 
 " }
 
@@ -96,8 +147,14 @@ let g:Tex_MultipleCompileFormats='pdf, aux'
 
 
 " command-t {   "
-       set wildignore+=*.ii,*.o,*.os,*.s,*.orig,.git,builds/*,*.pyc,*.pyo
+       set wildignore+=*.ii,*.o,*.os,*.s,*.orig,.git,build/*,*.pyc,*.pyo
        let g:CommandTTraverseSCM = 'pwd'
+
+       "Don't jump to the previous tab!!
+       let g:CommandTAcceptSelectionCommand = 'e'
+       " let g:CommandTAcceptSelectionSplitCommand = 'sp'
+       " let g:CommandTAcceptSelectionTabCommand = 'CommandTOpen tabe'
+       " let g:CommandTAcceptSelectionVSplitCommand = 'vs'
 " }
 
 " taghighlight {
@@ -152,6 +209,7 @@ let g:tagbar_type_cpp = {
     let g:ycm_confirm_extra_conf = 0    "Just don't be dumb
      let g:ycm_disable_for_files_larger_than_kb = 100
      map <F9> :YcmCompleter FixIt<CR>
+     let g:ycm_python_binary_path = 'python'
 " }
 
 " easytags {
@@ -175,7 +233,7 @@ let g:tagbar_type_cpp = {
     set foldmethod=syntax
 
     let g:gruvbox_italic=1
-    let g:gruvbox_contrast_dark = 'hard'
+    " let g:gruvbox_contrast_dark = 'hard'
     set t_Co=256
     colorscheme gruvbox
     set background=dark         " Assume a dark background
@@ -278,22 +336,22 @@ endif
     set softtabstop=4 				" let backspace delete indent
     "filetype plugin indent on
     "set matchpairs+=<:>            	" match, to be used with %
-    command Stylize execute "%! astyle"
     command CountInsert %s/^/\=line('.')."\t"/
     "nnoremap <leader>a :Stylize <bar> :set foldmethod=syntax<CR>
-    nnoremap <leader>a :Stylize<CR>
+    nnoremap <leader>a :ClangFormat<CR>
 
     au BufNewFile,BufRead Makemodule.am set filetype=automake
+    au BufNewFile,BufRead *.cxpy set filetype=cpp
 
 "}
 
 " Needs moar macros {
-    source /usr/share/vim/vim74/ftplugin/man.vim
+    " source /usr/share/vim/vim74/ftplugin/man.vim
 "}
 
 " Use local vimrc if available {
-    if filereadable(expand("~/.vimrc.local"))
-        source ~/.vimrc.local
+    if filereadable(glob("./.vimrc.local"))
+        source ./.vimrc.local
     endif
 " }
 
