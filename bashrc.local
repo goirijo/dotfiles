@@ -39,9 +39,6 @@ export HISTSIZE=1000000
 #Make autojump start
 . /usr/share/autojump/autojump.sh
 
-#source wrappers
-source ~/bin/wrappers.lib
-
 export DUMP=$HOME/owncloud/dump
 
 #Fuck emacs

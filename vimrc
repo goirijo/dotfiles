@@ -94,6 +94,7 @@ let g:yapf_style = "google"
 
 " vim-clang-format{
 let g:clang_format#code_style = "llvm"
+let g:clang_format#detect_style_file = 1
 let g:clang_format#style_options = {
             \ "AccessModifierOffset" : -4,
             \ "AllowShortIfStatementsOnASingleLine" : "false",
@@ -103,6 +104,7 @@ let g:clang_format#style_options = {
             \ "PointerAlignment" : "Left",
             \ "BinPackParameters" : "false",
             \ "ConstructorInitializerAllOnOneLineOrOnePerLine" : "true",
+            \ "IndentWidth"  :     4,
             \ "BreakBeforeBraces" : "Allman"}
 " }
 
@@ -120,8 +122,10 @@ let g:Tex_IgnoredWarnings =
             \"Missing number, treated as zero.\n".
             \"There were undefined references\n".
             \"Citation %.%# undefined\n".
-            \"Label(s) may have changed"
-let g:Tex_IgnoreLevel=8
+            \"Label(s) may have changed\n".
+            \"A float is stuck \n".
+            \"option without twoside option is"
+let g:Tex_IgnoreLevel=10
 
 " For when you want to switch to XeTeX
 function SetXeTex()
@@ -143,7 +147,7 @@ function SetXeTex()
 
 
 " command-t {   "
-       set wildignore+=*.ii,*.o,*.os,*.s,*.orig,.git,builds/*,*.pyc,*.pyo
+       set wildignore+=*.ii,*.o,*.os,*.s,*.orig,.git,build/*,*.pyc,*.pyo
        let g:CommandTTraverseSCM = 'pwd'
 
        "Don't jump to the previous tab!!
@@ -205,6 +209,7 @@ let g:tagbar_type_cpp = {
     let g:ycm_confirm_extra_conf = 0    "Just don't be dumb
      let g:ycm_disable_for_files_larger_than_kb = 100
      map <F9> :YcmCompleter FixIt<CR>
+     let g:ycm_python_binary_path = 'python'
 " }
 
 " easytags {
@@ -228,7 +233,7 @@ let g:tagbar_type_cpp = {
     set foldmethod=syntax
 
     let g:gruvbox_italic=1
-    let g:gruvbox_contrast_dark = 'hard'
+    " let g:gruvbox_contrast_dark = 'hard'
     set t_Co=256
     colorscheme gruvbox
     set background=dark         " Assume a dark background
@@ -341,7 +346,7 @@ endif
 "}
 
 " Needs moar macros {
-    source /usr/share/vim/vim74/ftplugin/man.vim
+    " source /usr/share/vim/vim74/ftplugin/man.vim
 "}
 
 " Use local vimrc if available {

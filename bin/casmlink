@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Handle multiple casm versions by symlinking to the one you want.
-#For this example I've got CASMPREFIX set to CASMcode-dev/builds/target
+#For this example I've got CASMPREFIX set to CASMcode-dev/build/target
 #and have the environment of my machine set up so that it expects to find
 #bin, include and lib content under $HOME/.local
 #
@@ -18,9 +18,13 @@ LOCAL=$HOME/.local
 if [[ -z "$1" ]]; then
     echo "You must provide a build directory to link to"
     exit
-    # VERDIR=$CASMDEV/builds/target
+    # VERDIR=$CASMDEV/build/target
+elif [[ $1 == '--_completion' ]]; then
+    comps=$(find $HOME/programming/CASMcode-dev/build -maxdepth 1 -type d -exec basename {} \;)
+    echo $comps
+    exit
 else
-    VERDIR=$CASMDEV/builds/$1
+    VERDIR=$CASMDEV/build/$1
 fi
 
 for f in $VERDIR/bin/*; do
@@ -52,7 +56,7 @@ done
 VERSION=$(casm version)
 VERSION=${VERSION/#* /}
 
-if [[ ! -e $CASMDEV/builds/$VERSION ]]; then
-    cp -r $CASMDEV/builds/target $CASMDEV/builds/$VERSION
-    echo "Added $VERSION to builds."
+if [[ ! -e $CASMDEV/build/$VERSION ]]; then
+    cp -r $CASMDEV/build/target $CASMDEV/build/$VERSION
+    echo "Added $VERSION to build."
 fi
