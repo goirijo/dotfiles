@@ -53,7 +53,7 @@ backend      : TkAgg
 # location.  This is where the matplotlib fonts, bitmaps, etc reside
 #datapath : /home/jdhunter/mpldata
 
-
+#EVERYTHING BELOW GOT COMMENTED OUT MASSIVELY
 ### LINES
 # See http://matplotlib.sourceforge.net/api/artist_api.html#module-matplotlib.lines for more
 # information on line properties.
@@ -74,7 +74,7 @@ lines.color       : black
 # circles.  See
 # http://matplotlib.sourceforge.net/api/artist_api.html#module-matplotlib.patches
 # information on patch properties
-#patch.linewidth        : 1.0     # edge width in points
+patch.linewidth        : 0.3     # edge width in points
 #patch.facecolor        : blue
 #patch.edgecolor        : black
 #patch.antialiased      : True    # render patches in antialised (no jaggies)
@@ -209,7 +209,7 @@ mathtext.bf  : serif:bold
 axes.linewidth      : 3.0     # edge linewidth
 axes.grid           : False   # display grid or not
 #axes.titlesize      : large   # fontsize of the axes title
-#axes.labelsize      : medium  # fontsize of the x any y labels
+axes.labelsize      : large  # fontsize of the x any y labels
 #axes.labelweight    : bold  # weight of the x and y labels
 #axes.labelcolor     : black
 #axes.axisbelow      : False   # whether axis gridlines and ticks are below
@@ -277,10 +277,10 @@ legend.borderpad     : 0.5    # border whitespace in fontsize units
 #legend.handlelength  : 2.     # the length of the legend lines in fraction of fontsize
 #legend.handleheight  : 0.7     # the height of the legend handle in fraction of fontsize
 #legend.handletextsep : 0.02   # deprecated; the space between the legend line and legend text
-#legend.handletextpad : 0.8    # the space between the legend line and legend text in fraction of fontsize
+legend.handletextpad : 0.1    # the space between the legend line and legend text in fraction of fontsize
 #legend.axespad       : 0.02   # deprecated; the border between the axes and legend edge
 #legend.borderaxespad : 0.5   # the border between the axes and legend edge in fraction of fontsize
-#legend.columnspacing : 2.    # the border between the axes and legend edge in fraction of fontsize
+legend.columnspacing : 0.1    # the border between the axes and legend edge in fraction of fontsize
 #legend.shadow        : False
 legend.frameon       : False   # whether or not to draw a frame around legend
 

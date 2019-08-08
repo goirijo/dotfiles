@@ -76,10 +76,22 @@ snip+=prespace`$0
 endsnippet
 
 snippet guard "Make an include guard" b
-#ifndef ${1:MYFILE}_HH
+#ifndef ${1:`!p snip.rv = snip.basename.upper()`}_HH
 #define $1_HH
 
 $0
+
+#endif
+endsnippet
+
+snippet casmguard "Make an include guard for a casm header" b
+#ifndef ${1:`!p snip.rv = snip.basename.upper()`}_HH
+#define $1_HH
+
+namespace CASM
+{
+$0
+}
 
 #endif
 endsnippet
