@@ -18,6 +18,12 @@ anchorcd()
     cd $(cat ~/.anchor)
 }
 
+scrot-clip()
+{
+    scrot -s $HOME/tmp/scrot.png
+    xclip -selection c -t image/png < $HOME/tmp/scrot.png
+}
+
 _countdown()
 {
     for (( i=30; i>0; i--)); do
@@ -47,3 +53,6 @@ scriptroot()
         cd ..
     done
 }
+
+# manswitch () { man $1 | less -p "^ +$2"; }
+manswitch() { man -P "less -p \"^ +$2\b\"" $1; }

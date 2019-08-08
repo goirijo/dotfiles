@@ -209,6 +209,8 @@ let g:tagbar_type_cpp = {
     let g:ycm_confirm_extra_conf = 0    "Just don't be dumb
      let g:ycm_disable_for_files_larger_than_kb = 100
      map <F9> :YcmCompleter FixIt<CR>
+     map <Leader><Leader>a :YcmCompleter GoToDeclaration<CR>
+     map <Leader><Leader>s :YcmCompleter GoToDefinition<CR>
      let g:ycm_python_binary_path = 'python'
 " }
 
