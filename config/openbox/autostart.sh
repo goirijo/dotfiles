@@ -30,7 +30,7 @@ xset b off &
 xmodmap ~/.dotfiles/xmodmap
 
 #Open terminal window here and also on d2
-(sleep 5 && terminator-d2) &
+# (sleep 5 && terminator-d2) &
 (sleep 2 && terminator) &
 
 #Fuck making my own sessions
@@ -41,10 +41,6 @@ muxspawn &
 
 #Start conky
 (sleep 2 && conky -c ~/.conky/conkyrc) &
-
-#File syncing
-(sleep 3 && owncloud) &
-(sleep 4 && syncthing) &
 
 #Autostart redshift
 (sleep 10 && redshift) &
@@ -57,6 +53,10 @@ muxspawn &
 
 #Start browsing
 (sleep 1 && firefox) &
+
+#File syncing
+(sleep 3 && owncloud) &
+(sleep 4 && syncthing) &
 
 #Backup the current package list
 dpkg --get-selections > $HOME/.config/dpkg.list

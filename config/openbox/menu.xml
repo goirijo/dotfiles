@@ -180,6 +180,12 @@
     </menu>
 
     <menu id="system-prefs" label="Settings">
+        <item label="AR+R">
+            <action name="Execute">
+                <command>arandr</command>
+                <startupnotify><enabled>yes</enabled></startupnotify>
+            </action>
+        </item>
         <item label="Sound Manager">
             <action name="Execute">
                 <command>pavucontrol</command>
