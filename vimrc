@@ -21,7 +21,7 @@
     Plugin 'jeaye/color_coded'
     Plugin 'morhetz/gruvbox'
     Plugin 'Tagbar'
-    Plugin 'EasyMotion'
+    " Plugin 'EasyMotion'
     Plugin 'freitass/todo.txt-vim'
     Plugin 'tpope/vim-abolish'
     Plugin 'tpope/vim-surround' 
@@ -35,10 +35,13 @@
     Plugin 'honza/vim-snippets'
     Plugin 'mindriot101/vim-yapf'
     Plugin 'rhysd/vim-clang-format'
-    Plugin 'lyuts/vim-rtags'
+    " Plugin 'lyuts/vim-rtags'
     Plugin 'szw/vim-maximizer'
     Plugin 'mileszs/ack.vim'
     " Plugin 'gioele/vim-autoswap'
+    Plugin 'gauteh/vim-cppman'
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'ryanoasis/vim-devicons'
     
     "
     "Plugin 'GetLatestVimScripts'
@@ -136,6 +139,9 @@ function SetXeTex()
 " }
 
 " fugitive {
+    " nnoremap dgh :diffget //2<CR>
+    " nnoremap dgl :diffget //3<CR>
+
     set diffopt+=vertical
     set diffopt+=iwhite
     set diffexpr=""
@@ -162,6 +168,7 @@ function SetXeTex()
 " }
 
 " tagbar {
+nmap <F8> :TagbarToggle<CR>
 let g:tagbar_type_cpp = {
             \ 'kinds' : [
             \ 'd:macros:1',
@@ -347,13 +354,21 @@ endif
 
 "}
 
+" NERDtree {
+    map <F7> :NERDTreeToggle<CR>
+" }
+
 " Needs moar macros {
-    " source /usr/share/vim/vim74/ftplugin/man.vim
+filetype plugin on
+runtime macros/matchit.vim
 "}
 
 " Use local vimrc if available {
     if filereadable(glob("./.vimrc.local"))
         source ./.vimrc.local
+    endif
+    if filereadable(glob("./vimrc.local"))
+        source ./vimrc.local
     endif
 " }
 

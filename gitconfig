@@ -4,17 +4,11 @@
 [core]
     editor = vim
 	trustctime = false
-[rerere]
-    enabled = 1
 [alias]
     undo-commit = reset --soft HEAD^
-[mergetool "fugitive"]
-	cmd = vim -f -c \"Gdiff\" \"$MERGED\"
-[mergetool "mymeld"]
-    cmd = meld --auto-merge --output $MERGED $LOCAL $BASE $REMOTE --diff $BASE $LOCAL --diff $BASE $REMOTE
-[merge]
-	tool = fugitive
-    conflictstyle = diff3
+	d = difftool
+[diff]
+	tool = vimdiff
 [push]
 	default = simple
 [filter "lfs"]
@@ -22,3 +16,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[mergetool]
+	keepBackup = false

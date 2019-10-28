@@ -6,7 +6,7 @@ export CASMPOTCAR=$HOME/science/vasp_potentials
 export LIBCASM=$HOME/.local/lib/libcasm.so
 export LIBCCASM=$HOME/.local/lib/libccasm.so
 export LD_LIBRARY_PATH=$HOME/.local/lib
-export CPLUS_INCLUDE_PATH=$HOME/.local/include
+# export CPLUS_INCLUDE_PATH=$HOME/.local/include
 
 #Switch back here if you ditch versioning
 #export CASMPOTCAR=$HOME/vasp_potentials
