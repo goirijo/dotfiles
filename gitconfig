@@ -3,18 +3,32 @@
     email = jg.goiri@gmail.com
 [core]
     editor = vim
-	trustctime = false
-[alias]
-    undo-commit = reset --soft HEAD^
-	d = difftool
-[diff]
-	tool = vimdiff
+    trustctime = false
 [push]
-	default = simple
+    default = simple
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 [mergetool]
-	keepBackup = false
+    keepBackup = false
+    prompt = true
+[mergetool "fugitive"]
+    cmd = vim -f -c \"Gdiffsplit!\" \"$MERGED\"
+[merge]
+    tool = fugitive
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = true
+[alias]
+    conflicted = !vim +Conflicted
+[mergetool "diffconflicts"]
+    cmd = vim -c DiffConflicts \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
+    trustExitCode = true
+[mergetool "meld"]
+    # Choose one of these 2 lines (not both!) explained below.
+    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+    #cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+

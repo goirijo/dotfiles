@@ -1,49 +1,51 @@
-" vundle {
-    set nocompatible              " be iMproved, required
-    filetype off                  " required
-
-    " set the runtime path to include Vundle and initialize
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
-
-    " let Vundle manage Vundle, required
-    Plugin 'gmarik/Vundle.vim'
-
-    Plugin 'goirijo/vim-jgg-colorscheme'
-    Plugin 'Valloric/YouCompleteMe'
-    Plugin 'vim-latex/vim-latex'
-    " Plugin 'TeX-PDF'
-    Plugin 'gerw/vim-HiLinkTrace'
-    Plugin 'wincent/command-t'
-    Plugin 'vim-airline/vim-airline'
-    Plugin 'vim-airline/vim-airline-themes'
-    Plugin 'fugitive.vim'
-    Plugin 'jeaye/color_coded'
-    Plugin 'morhetz/gruvbox'
-    Plugin 'Tagbar'
-    " Plugin 'EasyMotion'
-    Plugin 'freitass/todo.txt-vim'
-    Plugin 'tpope/vim-abolish'
-    Plugin 'tpope/vim-surround' 
-    Plugin 'tpope/vim-repeat' 
-    Plugin 'tpope/vim-commentary' 
-    Plugin 'jlanzarotta/bufexplorer'
-    Plugin 'Konfekt/FastFold'   "fold=syntax slows vim down a LOT
-    Plugin 'LargeFile'
-    Plugin 'DoxygenToolkit.vim'
-    Plugin 'SirVer/ultisnips'
-    Plugin 'honza/vim-snippets'
-    Plugin 'mindriot101/vim-yapf'
-    Plugin 'rhysd/vim-clang-format'
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+    Plug 'ycm-core/YouCompleteMe'
+    Plug 'vim-latex/vim-latex'
+    Plug 'wincent/command-t'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'gerw/vim-HiLinkTrace'
+    " Plug 'arakashic/chromatica.nvim'
+    Plug 'jeaye/color_coded'
+    Plug 'arakashic/chromatica.nvim'
+    Plug 'morhetz/gruvbox'
+    Plug 'majutsushi/tagbar'
+    Plug 'freitass/todo.txt-vim'
+    Plug 'tpope/vim-fugitive'
+    " Plug 'christoomey/vim-conflicted'
+    " Plug 'whiteinge/diffconflicts'
+    Plug 'tpope/vim-abolish'
+    Plug 'tpope/vim-surround' 
+    Plug 'tpope/vim-repeat' 
+    Plug 'tpope/vim-commentary' 
+    Plug 'jlanzarotta/bufexplorer'
+    Plug 'Konfekt/FastFold'   "fold=syntax slows vim down a LOT
+    Plug 'vim-scripts/LargeFile'
+    Plug 'vim-scripts/DoxygenToolkit.vim'
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+    Plug 'mindriot101/vim-yapf'
+    Plug 'rhysd/vim-clang-format'
+    Plug 'mileszs/ack.vim'
+    Plug 'scrooloose/nerdtree'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'joshdick/onedark.vim'
+    Plug 'tomasr/molokai'
+    Plug 'sonph/onehalf'
+    Plug 'gosukiwi/vim-atom-dark'
+    Plug 'nanotech/jellybeans.vim'
     " Plugin 'lyuts/vim-rtags'
-    Plugin 'szw/vim-maximizer'
-    Plugin 'mileszs/ack.vim'
     " Plugin 'gioele/vim-autoswap'
-    Plugin 'gauteh/vim-cppman'
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'ryanoasis/vim-devicons'
-    
-    "
+    " Plugin 'gauteh/vim-cppman'
+    " Plugin 'EasyMotion'
+    " Plugin 'TeX-PDF'
+    " Plugin 'gerw/vim-HiLinkTrace'
+    " Plugin 'junegunn/vim-peekaboo'
+    " Plugin 'ludwig/split-manpage.vim'
+     " Plugin 'vim-utils/vim-man'
     "Plugin 'GetLatestVimScripts'
     "Plugin 'vim-misc'
     "Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
@@ -63,23 +65,7 @@
     "Plugin 'easytags.vim'
     "Plugin 'blueyed/vim-diminactive'
     "Plugin 'nacitar/terminalkeys.vim'
-    
-    " All of your Plugins must be added before the following line
-    call vundle#end()            " required
-    filetype plugin indent on    " required
-    " To ignore plugin indent changes, instead use:
-    "filetype plugin on
-    "
-    " Brief help
-    " :PluginList       - lists configured plugins
-    " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-    " :PluginSearch foo - searches for foo; append `!` to refresh local cache
-    " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-    "
-    " see :h vundle for more details or wiki for FAQ
-    " Put your non-Plugin stuff after this line
-
-" }
+call plug#end()
 
 " This might hurt some plugins
 "    set autochdir
@@ -143,8 +129,8 @@ function SetXeTex()
     " nnoremap dgl :diffget //3<CR>
 
     set diffopt+=vertical
-    set diffopt+=iwhite
-    set diffexpr=""
+    " set diffopt+=iwhite
+    " set diffexpr=""
 "}
 
 " color_coded {
@@ -208,17 +194,25 @@ let g:tagbar_type_cpp = {
 " }
 
 " youcompleteme stuff {
-    "set sessionoptions=blank,buffers,curdir,folds,help,tabpages,winsize
-    let g:ycm_collect_identifiers_from_tags_files = 0
-"    let g:ycm_seed_identifiers_with_syntax = 1
-    let g:ycm_register_as_syntastic_checker = 1
+    " set sessionoptions=blank,buffers,curdir,folds,help,tabpages,winsize
+    " let g:ycm_collect_identifiers_from_tags_files = 0
+    " let g:ycm_seed_identifiers_with_syntax = 1
+    " let g:ycm_register_as_syntastic_checker = 1
     let g:ycm_autoclose_preview_window_after_insertion = 1
     let g:ycm_confirm_extra_conf = 0    "Just don't be dumb
-     let g:ycm_disable_for_files_larger_than_kb = 100
-     map <F9> :YcmCompleter FixIt<CR>
-     map <Leader><Leader>a :YcmCompleter GoToDeclaration<CR>
-     map <Leader><Leader>s :YcmCompleter GoToDefinition<CR>
-     let g:ycm_python_binary_path = 'python'
+    let g:ycm_disable_for_files_larger_than_kb = 100
+    map <F9> :YcmCompleter FixIt<CR>
+    map <Leader><Leader>a :YcmCompleter GoToDeclaration<CR>
+    map <Leader><Leader>s :YcmCompleter GoToDefinition<CR>
+    " let g:ycm_python_binary_path = 'python'
+
+	"Stuff you want done after calling YcmDiags
+	function! s:CustomizeYcmLocationWindow()
+	  " Go to previous window.
+	  wincmd p
+	endfunction
+
+	autocmd User YcmLocationOpened call s:CustomizeYcmLocationWindow()
 " }
 
 " easytags {
@@ -253,6 +247,8 @@ let g:tagbar_type_cpp = {
     set autowrite                  " automatically write a file when leaving a modified buffer
     set history=1000  				" Store a ton of history (default is 20)
     set spell 		 	        	" spell checking on
+
+    autocmd FileType cpp set keywordprg=cppman
 
     "set backup 						" backups are nice ...
     " }
