@@ -12,7 +12,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'jeaye/color_coded'
     Plug 'arakashic/chromatica.nvim'
     Plug 'morhetz/gruvbox'
-    Plug 'majutsushi/tagbar'
+    " Plug 'majutsushi/tagbar'  "clashes with ycm
     Plug 'freitass/todo.txt-vim'
     Plug 'tpope/vim-fugitive'
     " Plug 'christoomey/vim-conflicted'
@@ -89,7 +89,7 @@ let g:clang_format#style_options = {
             \ "AllowShortIfStatementsOnASingleLine" : "false",
             \ "AlwaysBreakTemplateDeclarations" : "true",
             \ "Standard" : "C++11",
-            \ "ColumnLimit" : "120",
+            \ "ColumnLimit" : "140",
             \ "PointerAlignment" : "Left",
             \ "BinPackParameters" : "false",
             \ "ConstructorInitializerAllOnOneLineOrOnePerLine" : "true",
@@ -213,6 +213,13 @@ let g:tagbar_type_cpp = {
 	endfunction
 
 	autocmd User YcmLocationOpened call s:CustomizeYcmLocationWindow()
+
+    "Aren't I cool?
+    let g:ycm_error_symbol="🗙"
+    let g:ycm_warning_symbol="⚠️"
+
+    " sign define YcmError text=xx
+    " sign define YcmWarning text=
 " }
 
 " easytags {
