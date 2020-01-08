@@ -161,8 +161,11 @@ stty -ixon
 
 eval "$(thefuck --alias)"
 
+export PATH=$PATH:$HOME/.local/bin
 
 #Additoinal settings 
 source $HOME/.bashrc.local
 source $HOME/.bashrc.casm
 source $HOME/.bashrc.functions
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

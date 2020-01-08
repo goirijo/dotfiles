@@ -935,7 +935,7 @@
       <decor>no</decor>
       <position force="yes">
         <x>960</x>
-        <y>5</y>
+        <y>0</y>
       </position>
     </application>
     <application name="spotify">
@@ -947,7 +947,7 @@
       <decor>no</decor>
       <position force="yes">
         <x>0</x>
-        <y>5</y>
+        <y>0</y>
       </position>
     </application>
   </applications>
