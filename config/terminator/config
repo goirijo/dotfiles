@@ -21,7 +21,7 @@
     color_scheme = custom
     copy_on_selection = True
     cursor_color = "#d8d8d8"
-    font = DejaVu Sans Mono for Powerline 10
+    font = DejaVuSansMono Nerd Font 10
     foreground_color = "#d8d8d8"
     scrollback_infinite = True
     scrollback_lines = 5000

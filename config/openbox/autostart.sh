@@ -39,6 +39,9 @@ muxspawn &
 #Bluetooth plz
 (sleep 2 && blueman-applet) &
 
+#Internet plz
+(sleep 2 && nm-applet) &
+
 #Start conky
 (sleep 2 && conky -c ~/.conky/conkyrc) &
 

@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Ambiance-XFCE-LXDE-Green</name>
+    <name>Shades-of-gray-Cerulean</name>
     <titleLayout>NLDIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -935,7 +935,7 @@
       <decor>no</decor>
       <position force="yes">
         <x>960</x>
-        <y>5</y>
+        <y>0</y>
       </position>
     </application>
     <application name="spotify">
@@ -947,7 +947,7 @@
       <decor>no</decor>
       <position force="yes">
         <x>0</x>
-        <y>5</y>
+        <y>0</y>
       </position>
     </application>
   </applications>
