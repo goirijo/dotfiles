@@ -55,8 +55,8 @@ muxspawn &
 (sleep 1 && firefox) &
 
 #File syncing
-(sleep 3 && owncloud) &
-(sleep 4 && syncthing) &
+# (sleep 3 && owncloud) &
+# (sleep 4 && syncthing) &
 
 #Backup the current package list
 dpkg --get-selections > $HOME/.config/dpkg.list
