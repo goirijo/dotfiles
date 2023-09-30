@@ -14,7 +14,7 @@ xfce4-volumed &
 ## Enable power management and disable xset things
 xset s off
 xset -dpms
-xfce4-power-manager
+#xfce4-power-manager
 
 ## Start Thunar Daemon
 thunar --daemon &
@@ -25,9 +25,6 @@ xset r rate 250 25 &
 
 ## Turn on/off system beep
 xset b off &
-
-#Rebind keys
-xmodmap ~/.dotfiles/xmodmap
 
 #Open terminal window here and also on d2
 # (sleep 5 && terminator-d2) &
@@ -48,9 +45,6 @@ muxspawn &
 #Autostart redshift
 (sleep 10 && redshift) &
 
-#Dat music
-(sleep 5 && spotify-d4) &
-
 #Get tint2 going
 (sleep 1 && tint2) &
 
@@ -58,8 +52,11 @@ muxspawn &
 (sleep 1 && firefox) &
 
 #File syncing
-(sleep 3 && owncloud) &
 (sleep 4 && syncthing) &
 
 #Backup the current package list
 dpkg --get-selections > $HOME/.config/dpkg.list
+
+#Rebind keys
+sleep 4 && xmodmap $HOME/.dotfiles/xmodmap
+

@@ -344,6 +344,7 @@ complete -F _complete_alias cu
 alias zz="cd !$"
 alias casmd='cd $CASMDEV'
 alias utild='cd $HOME/programming/casm-utilities'
+alias mushd='cd $HOME/programming/multishifter'
 alias blind='xset dpms force off'
 alias ks='ls'
 alias copy='xclip -selection clipboard'
@@ -355,3 +356,5 @@ alias deja-dup-preferences='sudo deja-dup-preferences'
 alias remouse='sudo modprobe -r psmouse && sudo modprobe psmouse'
 alias casmtest='$CASMDEV/builds/debugable/bin/casm'
 alias cu='casmutils'
+alias megashuttle='sshuttle -r jgg@128.111.179.30 -x 128.111.179.30 0/0 -vv'
+alias calibre="$HOME/.local/bin/calibre/calibre"

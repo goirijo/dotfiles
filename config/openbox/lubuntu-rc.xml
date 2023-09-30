@@ -924,5 +924,9 @@
     <application name="terminator"
     </application>
     -->
+    <application class="Firefox">
+        <decor>no</decor>
+    </application>
+
   </applications>
 </openbox_config>

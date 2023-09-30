@@ -7,4 +7,4 @@ if [ "$SHLVL" = 1 ]; then
 fi
 
 ##################################
-rm -r $HOME/tmp/*
+rm -rf $HOME/tmp/*

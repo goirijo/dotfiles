@@ -169,3 +169,9 @@ source $HOME/.bashrc.casm
 source $HOME/.bashrc.functions
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/.local/gems"
+export PATH="$HOME/.local/gems/bin:$PATH"
+
+#oh my bash
+#source $HOME/.oh-my-bash/templates/bashrc.osh-template

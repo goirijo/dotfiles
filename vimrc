@@ -8,8 +8,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'gerw/vim-HiLinkTrace'
+    Plug 'gabrielelana/vim-markdown'
     " Plug 'arakashic/chromatica.nvim'
-    Plug 'jeaye/color_coded'
+    " Plug 'jeaye/color_coded'
     Plug 'arakashic/chromatica.nvim'
     Plug 'morhetz/gruvbox'
     " Plug 'majutsushi/tagbar'  "clashes with ycm
@@ -37,6 +38,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'sonph/onehalf'
     Plug 'gosukiwi/vim-atom-dark'
     Plug 'nanotech/jellybeans.vim'
+    Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
     " Plugin 'lyuts/vim-rtags'
     " Plugin 'gioele/vim-autoswap'
     " Plugin 'gauteh/vim-cppman'
@@ -93,6 +95,7 @@ let g:clang_format#style_options = {
             \ "PointerAlignment" : "Left",
             \ "BinPackParameters" : "false",
             \ "ConstructorInitializerAllOnOneLineOrOnePerLine" : "true",
+            \ "BinPackArguments" : "false",
             \ "IndentWidth"  :     4,
             \ "BreakBeforeBraces" : "Allman"}
 " }
@@ -201,6 +204,7 @@ let g:tagbar_type_cpp = {
     let g:ycm_autoclose_preview_window_after_insertion = 1
     let g:ycm_confirm_extra_conf = 0    "Just don't be dumb
     let g:ycm_disable_for_files_larger_than_kb = 100
+    let g:ycm_clangd_args=['--header-insertion=never']
     map <F9> :YcmCompleter FixIt<CR>
     map <Leader><Leader>a :YcmCompleter GoToDeclaration<CR>
     map <Leader><Leader>s :YcmCompleter GoToDefinition<CR>
@@ -215,7 +219,7 @@ let g:tagbar_type_cpp = {
 	autocmd User YcmLocationOpened call s:CustomizeYcmLocationWindow()
 
     "Aren't I cool?
-    let g:ycm_error_symbol="🗙"
+    let g:ycm_error_symbol="❌"
     let g:ycm_warning_symbol="⚠️"
 
     " sign define YcmError text=xx
@@ -246,6 +250,7 @@ let g:tagbar_type_cpp = {
     " let g:gruvbox_contrast_dark = 'hard'
     set t_Co=256
     colorscheme gruvbox
+    let g:gruvbox_guisp_fallback = "bg"
     set background=dark         " Assume a dark background
     syntax on 					" syntax highlighting
     "set mouse=a					" automatically enable mouse usage

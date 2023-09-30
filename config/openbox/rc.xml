@@ -918,11 +918,12 @@
     </application>
 
     -->
-    <application name="spotify-d4">
-      <desktop>4</desktop>
-      <decor>no</decor>
-      <maximized>yes</maximized>
-      <decor>no</decor>
+    <application name="vlc">
+      <maximized>no</maximized>
+      <position force="yes">
+        <x>0</x>
+        <y>0</y>
+      </position>
     </application>
     <application name="terminator-d2">
       <desktop>2</desktop>
@@ -938,11 +939,7 @@
         <y>0</y>
       </position>
     </application>
-    <application name="spotify">
-      <maximized>no</maximized>
-      <decor>no</decor>
-    </application>
-    <application role="browser">
+    <application class="firefox">
       <maximized>no</maximized>
       <decor>no</decor>
       <position force="yes">
